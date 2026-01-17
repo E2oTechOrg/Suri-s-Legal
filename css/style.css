@@ -650,6 +650,8 @@ a:focus {
     text-align: center;
     background: #121518;
     margin-bottom: 30px;
+    height: 450px;
+    flex-direction: column;
 }
 
 .service .service-icon {
@@ -682,13 +684,14 @@ a:focus {
     font-size: 30px;
     font-weight: 600;
     color: #aa9166;
+    margin-bottom: 10px;
 }
 
 .service .service-item p {
     margin: 0;
     color: #999999;
     padding: 0 25px 25px 25px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .service .service-item a.btn {
@@ -753,8 +756,8 @@ a:focus {
     position: relative;
     margin-bottom: 15px;
     padding-bottom: 10px;
-    font-size: 30px;
-    font-weight: 600;
+    font-size: 28px;
+    font-weight: 700;
 }
 
 .feature .feature-item h3::after {
@@ -797,6 +800,29 @@ a:focus {
 
 .team .team-item {
     margin-bottom: 30px;
+    height: 100%;
+    flex-direction: column;
+}
+.team .team-icon {
+    position: absolute;
+    background: #aa9166;
+    color:#121518;
+    width:70px;
+    height:70px;
+    margin:-35px auto 0 auto;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 30px;
+    z-index: 8;
+    left:50%;
+    transform:translateX(-50%);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+}
+
+.team .team-text{
+    padding-top: 55px;
 }
 
 .team .team-img {
@@ -861,6 +887,84 @@ a:focus {
     color: #ffffff;
 }
 
+
+
+/*******************************/
+/*********** serve CSS **********/
+/*******************************/
+.serve {
+    position: relative;
+    width: 100%;
+    padding: 45px 0 15px 0;
+    height:100%;
+    flex-direction: column;
+}
+
+.serve .serve-item {
+    margin-bottom: 30px;
+    height: 100%;
+    flex-direction: column;
+}
+
+.serve .serve-text {
+    position: relative;
+    padding: 50px 15px 30px 15px;
+    text-align: center;
+    background: #121518;
+}
+
+.serve .serve-text h2 {
+    font-size: 22px;
+    font-weight: 600;
+    color: #aa9166;
+}
+
+.serve .serve-image{
+    position: relative;
+    height: 450px;
+    padding: 10px;
+    background: #121518;
+}
+.serve .serve-image img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/*******************************/
+/******* Commitment CSS *******/
+/*******************************/
+.commitment {
+    position: relative;
+    padding: 45px 0;
+    width:100%;
+}
+
+.commitment .commitment-item {
+    position: relative;
+    padding: 30px;
+    background: #121518;
+    text-align: center;
+    max-width:900px;
+    margin:0 auto;
+}
+
+.commitment .commitment-icon {
+    width: 60px;
+    height: 40px;
+    color:#aa9166;
+    font-size: 50px;
+    transform: rotate(180deg);
+    z-index: 2;
+}
+
+.commitment .commitment-item p {
+    color: #aa9166;
+    font-size: 18px;
+    line-height: 1.7;
+    font-weight: 500;
+    margin: 0;
+    align-items: center;
+}
 
 /*******************************/
 /*********** FAQs CSS **********/
@@ -1638,8 +1742,8 @@ a:focus {
 /*******************************/
 .footer {
     position: relative;
-    margin-top: 45px;
-    padding-top: 180px;
+    margin-top: 35px;
+    padding-top: 80px;
     background: #121518;
     color: #ffffff;
 }
