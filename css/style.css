@@ -658,8 +658,9 @@
       .disc-btn {
         top: 92%;
         right:5%;
-        width: 40%;
+        width: 30%;
         height:28px;
+        font-size: 8px;
       }
 
       .disc-overlay {
