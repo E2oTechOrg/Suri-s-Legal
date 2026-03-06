@@ -1,108 +1,64 @@
-(function ($) {
-    "use strict";
-    
-    // Back to top button
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 200) {
-            $('.back-to-top').fadeIn('slow');
-        } else {
-            $('.back-to-top').fadeOut('slow');
-        }
-    });
-    $('.back-to-top').click(function () {
-        $('html, body').animate({scrollTop: 0}, 1500, 'easeInOutExpo');
-        return false;
-    });
-    
-    
-    // Sticky Navbar
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 90) {
-            $('.nav-bar').addClass('nav-sticky');
-            $('.carousel, .page-header').css("margin-top", "73px");
-        } else {
-            $('.nav-bar').removeClass('nav-sticky');
-            $('.carousel, .page-header').css("margin-top", "0");
-        }
-    });
-    
-    
-    // Dropdown on mouse hover
-    $(document).ready(function () {
-        function toggleNavbarMethod() {
-            if ($(window).width() > 992) {
-                $('.navbar .dropdown').on('mouseover', function () {
-                    $('.dropdown-toggle', this).trigger('click');
-                }).on('mouseout', function () {
-                    $('.dropdown-toggle', this).trigger('click').blur();
-                });
-            } else {
-                $('.navbar .dropdown').off('mouseover').off('mouseout');
-            }
-        }
-        toggleNavbarMethod();
-        $(window).resize(toggleNavbarMethod);
-    });
+// Index
+  const navbar=document.getElementById('lcNavbar'),backTop=document.getElementById('backTop');
+window.addEventListener('scroll',()=>{navbar.classList.toggle('lc-navbar--scrolled',scrollY>50);backTop.classList.toggle('visible',scrollY>400)});
+document.getElementById('navToggle').addEventListener('click',()=>navbar.classList.toggle('nav-open'));
+document.querySelectorAll('.lc-navbar__nav-link').forEach(l=>l.addEventListener('click',()=>navbar.classList.remove('nav-open')));
 
-    // Testimonials carousel
-    $(".testimonials-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: {
-            0:{
-                items:1
-            },
-            576:{
-                items:1
-            },
-            768:{
-                items:2
-            },
-            992:{
-                items:3
-            }
-        }
-    });
-    
-    
-    // Blogs carousel
-    $(".blog-carousel").owlCarousel({
-        autoplay: true,
-        dots: true,
-        loop: true,
-        responsive: {
-            0:{
-                items:1
-            },
-            576:{
-                items:1
-            },
-            768:{
-                items:2
-            },
-            992:{
-                items:3
-            }
-        }
-    });
-    
-    
-    // Portfolio isotope and filter
-    var portfolioIsotope = $('.portfolio-container').isotope({
-        itemSelector: '.portfolio-item',
-        layoutMode: 'fitRows'
-    });
+// Carousel engine
+const C={};
+function initC(id,trackId,dotsId,total){
+    C[id]={cur:0,total,trackId,dotsId};
+    const el=document.getElementById(dotsId);
+    if(!el)return;
+    el.innerHTML='';
+    for(let i=0;i<total;i++){
+        const d=document.createElement('button');
+        d.className='mob-carousel__dot'+(i===0?' active':'');
+        d.onclick=()=>goC(id,i);
+        el.appendChild(d);
+    }
+    updateC(id);
+}
+function updateC(id){
+    const{cur,trackId,dotsId}=C[id];
+    const track=document.getElementById(trackId);
+    if(!track)return;
+    const w=track.parentElement.offsetWidth;
+    track.style.transform=`translateX(-${cur*w}px)`;
+    document.querySelectorAll(`#${dotsId} .mob-carousel__dot`).forEach((d,i)=>d.classList.toggle('active',i===cur));
+}
+function goC(id,i){C[id].cur=Math.max(0,Math.min(i,C[id].total-1));updateC(id)}
+function nextC(id){const c=C[id];goC(id,c.cur===c.total-1?0:c.cur+1)}
+function prevC(id){const c=C[id];goC(id,c.cur===0?c.total-1:c.cur-1)}
 
-    $('#portfolio-flters li').on('click', function () {
-        $("#portfolio-flters li").removeClass('filter-active');
-        $(this).addClass('filter-active');
+document.querySelectorAll('.mob-carousel__btn').forEach(btn=>{
+    btn.addEventListener('click',()=>{const id=btn.dataset.cid;btn.dataset.dir==='next'?nextC(id):prevC(id)});
+});
 
-        portfolioIsotope.isotope({filter: $(this).data('filter')});
-    });
-    
-})(jQuery);
+// Swipe
+function addSwipe(trackId,id){
+    const el=document.getElementById(trackId);if(!el)return;
+    let sx=0;
+    el.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+    el.addEventListener('touchend',e=>{const d=sx-e.changedTouches[0].clientX;if(Math.abs(d)>40)d>0?nextC(id):prevC(id)});
+}
 
+initC('svc','svcTrack','svcDots',6);
+initC('appr','apprTrack','apprDots',4);
+initC('ind','indTrack','indDots',5);
+initC('test','testTrack','testDots',3);
+initC('blog','blogTrack','blogDots',3);
+
+addSwipe('svcTrack','svc');addSwipe('apprTrack','appr');addSwipe('indTrack','ind');
+addSwipe('testTrack','test');addSwipe('blogTrack','blog');
+
+window.addEventListener('resize',()=>Object.keys(C).forEach(id=>updateC(id)));
+
+
+
+
+
+// Header
 fetch("header.html")
   .then((response) => response.text())
   .then((data) => {
@@ -114,3 +70,36 @@ fetch("header.html")
   .then((data) => {
     document.getElementById("footer").innerHTML = data;
   });
+
+
+
+// Disclaimer Popup
+
+(function () {
+  // Locks scroll while popup is open
+  document.body.style.overflow = 'hidden';
+
+  // To show only ONCE per browser session, uncomment the two lines below:
+  // if (sessionStorage.getItem('disc_agreed')) { document.body.style.overflow=''; return; }
+  // document.getElementById('discOverlay').style.display = 'flex'; // already visible by default
+
+  window.closeDisclaimer = function () {
+    var overlay = document.getElementById('discOverlay');
+    var modal   = document.getElementById('discModal');
+    // sessionStorage.setItem('disc_agreed', '1'); // uncomment for once-per-session
+    modal.style.animation   = 'discSlideDown 0.35s ease forwards';
+    overlay.style.animation = 'discFadeOut 0.4s ease 0.15s forwards';
+    setTimeout(function () {
+      overlay.style.display = 'none';
+      document.body.style.overflow = '';
+    }, 550);
+  };
+
+  var s = document.createElement('style');
+  s.textContent =
+    '@keyframes discSlideDown{to{opacity:0;transform:translateY(30px) scale(0.97)}}' +
+    '@keyframes discFadeOut{to{opacity:0}}';
+  document.head.appendChild(s);
+})();
+
+
