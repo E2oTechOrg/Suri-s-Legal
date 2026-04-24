@@ -1,7 +1,7 @@
 // Index
-  const navbar=document.getElementById('lcNavbar'),backTop=document.getElementById('backTop');
-window.addEventListener('scroll',()=>{navbar.classList.toggle('lc-navbar--scrolled',scrollY>50);backTop.classList.toggle('visible',scrollY>400)});
-document.getElementById('navToggle').addEventListener('click',()=>navbar.classList.toggle('nav-open'));
+//   const navbar=document.getElementById('lcNavbar'),backTop=document.getElementById('backTop');
+// window.addEventListener('scroll',()=>{navbar.classList.toggle('lc-navbar--scrolled',scrollY>50);backTop.classList.toggle('visible',scrollY>400)});
+// document.getElementById('navToggle').addEventListener('click',()=>navbar.classList.toggle('nav-open'));
 document.querySelectorAll('.lc-navbar__nav-link').forEach(l=>l.addEventListener('click',()=>navbar.classList.remove('nav-open')));
 
 // Carousel engine
@@ -54,8 +54,17 @@ addSwipe('testTrack','test');addSwipe('blogTrack','blog');
 
 window.addEventListener('resize',()=>Object.keys(C).forEach(id=>updateC(id)));
 
+const backTop = document.getElementById('backTop');
 
+window.addEventListener('scroll', () => {
+  if (!backTop) return;
 
+  if (window.scrollY > 400) {
+    backTop.classList.add('visible');
+  } else {
+    backTop.classList.remove('visible');
+  }
+});
 
 
 // Header
@@ -63,6 +72,27 @@ fetch("header.html")
   .then((response) => response.text())
   .then((data) => {
     document.getElementById("header").innerHTML = data;
+  });
+
+  fetch("navbar.html")
+  .then(res => res.text())
+  .then(data => {
+    document.getElementById("navbar").innerHTML = data;
+
+    const navbar = document.getElementById('lcNavbar');
+    const toggle = document.getElementById('navToggle');
+
+    if (toggle && navbar) {
+      toggle.addEventListener('click', () => {
+        navbar.classList.toggle('nav-open');
+      });
+
+      document.querySelectorAll('.lc-navbar__nav-link').forEach(l =>
+        l.addEventListener('click', () =>
+          navbar.classList.remove('nav-open')
+        )
+      );
+    }
   });
 
   fetch("footer.html")

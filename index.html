@@ -1,516 +1,1422 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
+  <head>
+    <meta charset="utf-8" />
     <title>Suri's Legal Consulting</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/style.css" rel="stylesheet" />
     <style>
-        .lc-hero__bg{position:absolute;inset:0;background:url('img/carousel.webp') center/cover no-repeat;opacity:0.22}
+      .lc-hero__bg {
+        position: absolute;
+        inset: 0;
+        background: url("img/carousel.webp") center/cover no-repeat;
+        opacity: 0.22;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- TOP BAR -->
+    <div id="header"></div>
 
-<!-- TOP BAR -->
-<div class="lc-topbar">
-    <div class="lc-container">
-        <div class="lc-topbar__inner">
-            <div class="lc-topbar__logo">Suri's Legal Consulting</div>
-            <div class="lc-topbar__contacts">
-                <div class="lc-topbar__contact-item"><i class="fas fa-phone-alt"></i><div><strong>+91 98765 43210</strong><br><span>Mon – Sat, 9am – 6pm</span></div></div>
-                <div class="lc-topbar__contact-item"><i class="fas fa-envelope"></i><div><strong>info@surilegal.com</strong><br><span>Confidential Consultations</span></div></div>
-            </div>
-            <div class="lc-topbar__socials">
-                <a href="#" class="lc-topbar__social-link"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#" class="lc-topbar__social-link"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="lc-topbar__social-link"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="lc-topbar__social-link"><i class="fab fa-instagram"></i></a>
-            </div>
+    <!-- NAVBAR -->
+    <div id="navbar"></div>
+
+    <div class="disc-overlay" id="discOverlay">
+      <div
+        class="disc-modal"
+        id="discModal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="discTitle"
+      >
+        <div class="disc-modal__head">
+          <button class="disc-close-btn" onclick="closeDisclaimer()">
+            <i class="fa fa-close"></i>
+          </button>
+
+          <h2 class="disc-modal__title" id="discTitle">
+            Disclaimer &amp; Confirmation
+          </h2>
+          <span class="disc-modal__eyebrow"
+            >Bar Council of India — Mandatory Notice</span
+          >
+          <span class="disc-modal__divider"></span>
         </div>
-    </div>
-</div>
 
-<!-- NAVBAR -->
-<nav class="lc-navbar" id="lcNavbar">
-    <div class="lc-container">
-        <div class="lc-navbar__inner">
-            <span class="lc-navbar__logo-mob">Suri's Legal</span>
-            <ul class="lc-navbar__nav">
-                <li><a href="#" class="lc-navbar__nav-link">Home</a></li>
-                <li><a href="#about" class="lc-navbar__nav-link">About</a></li>
-                <li><a href="#services" class="lc-navbar__nav-link">Services</a></li>
-                <li><a href="#industries" class="lc-navbar__nav-link">Industries</a></li>
-                <li><a href="#faqs" class="lc-navbar__nav-link">FAQs</a></li>
-                <li><a href="#blog" class="lc-navbar__nav-link">Blog</a></li>
-                <li><a href="#contact" class="lc-navbar__nav-link">Contact</a></li>
-            </ul>
-            <div class="lc-navbar__cta"><a href="#contact" class="lc-btn lc-btn--primary"><span>Book Consultation</span></a></div>
-            <div class="lc-navbar__toggle" id="navToggle"><span></span><span></span><span></span></div>
+        <div class="disc-modal__body">
+          <p class="disc-modal__intro">
+            As per the rules of the Bar Council of India,
+            <strong>Suri's Legal Consulting</strong> is prohibited from
+            soliciting work or advertising. By proceeding, you acknowledge the
+            following:
+          </p>
+          <ul class="disc-modal__list">
+            <li>
+              <span class="disc-modal__list-icon"
+                ><i class="fas fa-check"></i
+              ></span>
+              <span
+                >You are seeking information of your own accord — there has been
+                no solicitation or inducement by this firm.</span
+              >
+            </li>
+            <li>
+              <span class="disc-modal__list-icon"
+                ><i class="fas fa-check"></i
+              ></span>
+              <span
+                >This website does not seek to create or invite any
+                lawyer-client relationship.</span
+              >
+            </li>
+            <li>
+              <span class="disc-modal__list-icon"
+                ><i class="fas fa-check"></i
+              ></span>
+              <span
+                >No material or information on this website should be construed
+                as legal advice.</span
+              >
+            </li>
+            <li>
+              <span class="disc-modal__list-icon"
+                ><i class="fas fa-check"></i
+              ></span>
+              <span
+                >Suri's Legal Consulting shall not be liable for any
+                consequences arising out of any action taken by the user relying
+                on material or information provided on this website.</span
+              >
+            </li>
+            <li>
+              <span class="disc-modal__list-icon"
+                ><i class="fas fa-check"></i
+              ></span>
+              <span
+                >In all cases where legal issues exist, you must seek
+                independent legal advice.</span
+              >
+            </li>
+          </ul>
         </div>
-    </div>
-</nav>
 
-<div class="disc-overlay" id="discOverlay">
-  <div class="disc-modal" id="discModal" role="dialog" aria-modal="true" aria-labelledby="discTitle">
-
-    <div class="disc-modal__head">
-      
-        <button class="disc-close-btn" onclick="closeDisclaimer()">
-        <i class="fa fa-close"></i>
-      </button>
-
-      <h2 class="disc-modal__title" id="discTitle">Disclaimer &amp; Confirmation</h2>
-      <span class="disc-modal__eyebrow">Bar Council of India — Mandatory Notice</span>
-      <span class="disc-modal__divider"></span>
-    </div>
-
-    <div class="disc-modal__body">
-      <p class="disc-modal__intro">
-        As per the rules of the Bar Council of India, <strong>Suri's Legal Consulting</strong> is
-        prohibited from soliciting work or advertising. By proceeding, you acknowledge the following:
-      </p>
-      <ul class="disc-modal__list">
-        <li>
-          <span class="disc-modal__list-icon"><i class="fas fa-check"></i></span>
-          <span>You are seeking information of your own accord — there has been no solicitation or inducement by this firm.</span>
-        </li>
-        <li>
-          <span class="disc-modal__list-icon"><i class="fas fa-check"></i></span>
-          <span>This website does not seek to create or invite any lawyer-client relationship.</span>
-        </li>
-        <li>
-          <span class="disc-modal__list-icon"><i class="fas fa-check"></i></span>
-          <span>No material or information on this website should be construed as legal advice.</span>
-        </li>
-        <li>
-          <span class="disc-modal__list-icon"><i class="fas fa-check"></i></span>
-          <span>Suri's Legal Consulting shall not be liable for any consequences arising out of any action taken by the user relying on material or information provided on this website.</span>
-        </li>
-        <li>
-          <span class="disc-modal__list-icon"><i class="fas fa-check"></i></span>
-          <span>In all cases where legal issues exist, you must seek independent legal advice.</span>
-        </li>
-      </ul>
-    </div>
-
-    <div class="disc-modal__footer">
-      <button class="disc-btn disc-btn--primary" id="discAgree" onclick="closeDisclaimer()">
-        <span>I Agree</span>
-        <i class="fas fa-arrow-right"></i>
-      </button>
-    </div>
-
-  </div>
-</div>
-
-<!-- HERO -->
-<section class="lc-hero">
-    <div class="lc-hero__bg">
-    </div>
-        <div class="lc-hero__pattern"></div>
-        <div class="lc-container">
-            <div class="lc-hero__content">
-                <div class="lc-hero__eyebrow">
-                    <div class="lc-hero__eyebrow-line"></div>
-                    <span class="lc-label">Madurai's Trusted Legal Advisors</span>
-                </div>
-                <h1 class="lc-hero__title">Clarity.<br>Compliance.<br><em>Confidence.</em></h1>
-                <p class="lc-hero__subtitle">Professional Legal Consulting for Individuals, Businesses &amp; Corporates — guided by integrity and driven by results.</p>
-                <div class="lc-hero__actions">
-                    <a href="#contact" class="lc-btn lc-btn--primary"><span>Get Legal Advice</span><i class="fas fa-arrow-right"></i></a>
-                    <a href="#services" class="lc-btn lc-btn--outline-light"><span>Our Services</span></a>
-                </div>
-            </div>
+        <div class="disc-modal__footer">
+          <button
+            class="disc-btn disc-btn--primary"
+            id="discAgree"
+            onclick="closeDisclaimer()"
+          >
+            <span>I Agree</span>
+            <i class="fas fa-arrow-right"></i>
+          </button>
         </div>
-    <div class="lc-hero__badge">
-        <div class="lc-hero__badge-num">99%</div><div class="lc-hero__badge-text">
-            Case Success Rate
-        </div>
+      </div>
     </div>
-    <div class="lc-hero__scroll"><div class="lc-hero__scroll-arrow"></div></div>
-</section>
 
-<!-- STATS BAR -->
-<div class="lc-statsbar">
-    <div class="lc-container" style="padding:0">
+    <!-- HERO -->
+    <section class="lc-hero">
+      <div class="lc-hero__bg"></div>
+      <div class="lc-hero__pattern"></div>
+      <div class="lc-container">
+        <div class="lc-hero__content">
+          <div class="lc-hero__eyebrow">
+            <div class="lc-hero__eyebrow-line"></div>
+            <span class="lc-label">Madurai's Trusted Legal Advisors</span>
+          </div>
+          <h1 class="lc-hero__title">
+            Clarity.<br />Compliance.<br /><em>Confidence.</em>
+          </h1>
+          <p class="lc-hero__subtitle">
+            Professional Legal Consulting for Individuals, Businesses &amp;
+            Corporates — guided by integrity and driven by results.
+          </p>
+          <div class="lc-hero__actions">
+            <a href="#contact" class="lc-btn lc-btn--primary"
+              ><span>Get Legal Advice</span><i class="fas fa-arrow-right"></i
+            ></a>
+            <a href="#services" class="lc-btn lc-btn--outline-light"
+              ><span>Our Services</span></a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="lc-hero__badge">
+        <div class="lc-hero__badge-num">99%</div>
+        <div class="lc-hero__badge-text">Case Success Rate</div>
+      </div>
+      <div class="lc-hero__scroll">
+        <div class="lc-hero__scroll-arrow"></div>
+      </div>
+    </section>
+
+    <!-- STATS BAR -->
+    <div class="lc-statsbar">
+      <div class="lc-container" style="padding: 0">
         <div class="lc-statsbar__grid">
-            <div class="lc-statsbar__item">
-                <div class="lc-statsbar__icon">
-                    <i class="far fa-check-circle"></i>
-                </div>
-                <div>
-                    <div class="lc-statsbar__num">
-                        Govt
-                    </div>
-                    <div class="lc-statsbar__text">
-                        Approved Practice
-                    </div>
-                </div>
+          <div class="lc-statsbar__item">
+            <div class="lc-statsbar__icon">
+              <i class="far fa-check-circle"></i>
             </div>
-            <div class="lc-statsbar__item">
-                <div class="lc-statsbar__icon">
-                    <i class="fa fa-user-tie"></i>
-                </div>
-                <div>
-                    <div class="lc-statsbar__num">
-                        Expert
-                    </div>
-                    <div class="lc-statsbar__text">
-                        Licensed Attorneys
-                    </div>
-                </div>
+            <div>
+              <div class="lc-statsbar__num">Govt</div>
+              <div class="lc-statsbar__text">Approved Practice</div>
             </div>
-            <div class="lc-statsbar__item">
-                <div class="lc-statsbar__icon">
-                    <i class="far fa-thumbs-up"></i>
-                </div>
-                <div>
-                    <div class="lc-statsbar__num">
-                        99.99%
-                    </div>
-                    <div class="lc-statsbar__text">
-                        Cases Successfully Won
-                    </div>
-                </div>
+          </div>
+          <div class="lc-statsbar__item">
+            <div class="lc-statsbar__icon">
+              <i class="fa fa-user-tie"></i>
             </div>
-            <div class="lc-statsbar__item">
-                <div class="lc-statsbar__icon">
-                    <i class="far fa-handshake"></i>
-                </div>
-                <div>
-                    <div class="lc-statsbar__num">
-                        Quick
-                    </div>
-                    <div class="lc-statsbar__text">
-                        Client Support
-                    </div>
-                </div>
+            <div>
+              <div class="lc-statsbar__num">Expert</div>
+              <div class="lc-statsbar__text">Licensed Attorneys</div>
             </div>
+          </div>
+          <div class="lc-statsbar__item">
+            <div class="lc-statsbar__icon">
+              <i class="far fa-thumbs-up"></i>
+            </div>
+            <div>
+              <div class="lc-statsbar__num">99.99%</div>
+              <div class="lc-statsbar__text">Cases Successfully Won</div>
+            </div>
+          </div>
+          <div class="lc-statsbar__item">
+            <div class="lc-statsbar__icon">
+              <i class="far fa-handshake"></i>
+            </div>
+            <div>
+              <div class="lc-statsbar__num">Quick</div>
+              <div class="lc-statsbar__text">Client Support</div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
-</div>
 
-<!-- ABOUT -->
-<section class="lc-about lc-section" id="about">
-    <div class="lc-container">
+    <!-- ABOUT -->
+    <section class="lc-about lc-section" id="about">
+      <div class="lc-container">
         <div class="lc-about__grid">
-            <div class="lc-about__image-wrap">
-                <div class="lc-about__image-border"></div>
-                <img src="img/about.webp" alt="About Suri's Legal" class="lc-about__image-main">
-                <div class="lc-about__image-accent"><div class="lc-about__accent-num">10+</div><div class="lc-about__accent-text">Years of Legal Excellence</div></div>
+          <div class="lc-about__image-wrap">
+            <div class="lc-about__image-border"></div>
+            <img
+              src="img/about.webp"
+              alt="About Suri's Legal"
+              class="lc-about__image-main"
+            />
+            <div class="lc-about__image-accent">
+              <div class="lc-about__accent-num">10+</div>
+              <div class="lc-about__accent-text">Years of Legal Excellence</div>
             </div>
-            <div class="lc-about__body">
-                <div class="lc-section-head lc-section-head--left" style="margin-bottom:0">
-                    <span class="lc-label">Who We Are</span>
-                    <h2 class="lc-section-head__title">Bridging Law &amp; Real-World Practice</h2>
-                    <span class="lc-divider lc-divider--left"></span>
-                </div>
-                <p class="lc-about__text">Suri's Legal Consulting is a professional legal advisory firm committed to delivering clear, reliable and strategic legal guidance. We bridge the gap between complex legal frameworks and real-world applications.</p>
-                <p class="lc-about__text" style="margin-top:-8px">We serve individuals, startups, SMEs, and corporate entities across multiple legal domains, with a commitment that goes beyond resolving disputes — we prevent them.</p>
-                <div class="lc-about__pillars">
-                    <div class="lc-about__pillar"><div class="lc-about__pillar-dot"></div><span class="lc-about__pillar-label">Integrity &amp; Confidentiality</span></div>
-                    <div class="lc-about__pillar"><div class="lc-about__pillar-dot"></div><span class="lc-about__pillar-label">Strong Legal Research</span></div>
-                    <div class="lc-about__pillar"><div class="lc-about__pillar-dot"></div><span class="lc-about__pillar-label">Client-Focused Advisory</span></div>
-                    <div class="lc-about__pillar"><div class="lc-about__pillar-dot"></div><span class="lc-about__pillar-label">Practical Risk Mitigation</span></div>
-                </div>
-                <a href="#services" class="lc-btn lc-btn--outline"><span>Explore Our Services</span><i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="lc-about__body">
+            <div
+              class="lc-section-head lc-section-head--left"
+              style="margin-bottom: 0"
+            >
+              <span class="lc-label">Who We Are</span>
+              <h2 class="lc-section-head__title">
+                Bridging Law &amp; Real-World Practice
+              </h2>
+              <span class="lc-divider lc-divider--left"></span>
             </div>
+            <p class="lc-about__text">
+              Suri's Legal Consulting is a professional legal advisory firm
+              committed to delivering clear, reliable and strategic legal
+              guidance. We bridge the gap between complex legal frameworks and
+              real-world applications.
+            </p>
+            <p class="lc-about__text" style="margin-top: -8px">
+              We serve individuals, startups, SMEs, and corporate entities
+              across multiple legal domains, with a commitment that goes beyond
+              resolving disputes — we prevent them.
+            </p>
+            <div class="lc-about__pillars">
+              <div class="lc-about__pillar">
+                <div class="lc-about__pillar-dot"></div>
+                <span class="lc-about__pillar-label"
+                  >Integrity &amp; Confidentiality</span
+                >
+              </div>
+              <div class="lc-about__pillar">
+                <div class="lc-about__pillar-dot"></div>
+                <span class="lc-about__pillar-label"
+                  >Strong Legal Research</span
+                >
+              </div>
+              <div class="lc-about__pillar">
+                <div class="lc-about__pillar-dot"></div>
+                <span class="lc-about__pillar-label"
+                  >Client-Focused Advisory</span
+                >
+              </div>
+              <div class="lc-about__pillar">
+                <div class="lc-about__pillar-dot"></div>
+                <span class="lc-about__pillar-label"
+                  >Practical Risk Mitigation</span
+                >
+              </div>
+            </div>
+            <a href="#services" class="lc-btn lc-btn--outline"
+              ><span>Explore Our Services</span
+              ><i class="fas fa-arrow-right"></i
+            ></a>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- SERVICES -->
-<section class="lc-services lc-section" id="services">
-    <div class="lc-container">
+    <!-- SERVICES -->
+    <section class="lc-services lc-section" id="services">
+      <div class="lc-container">
         <div class="lc-section-head">
-            <span class="lc-label">What We Offer</span>
-            <h2 class="lc-section-head__title">Our Legal Services</h2>
-            <span class="lc-divider"></span>
+          <span class="lc-label">What We Offer</span>
+          <h2 class="lc-section-head__title">Our Legal Services</h2>
+          <span class="lc-divider"></span>
         </div>
         <!-- Desktop 3-col grid (6 cards = 2 rows) -->
         <div class="lc-services__grid">
-            <div class="lc-services__card"><div class="lc-services__icon"><i class="fa fa-landmark"></i></div><h3 class="lc-services__card-title">Legal Advisory &amp; Consultation</h3><p class="lc-services__card-desc">General legal opinion &amp; case evaluation, preventive legal strategies, risk analysis &amp; compliance guidance tailored to your situation.</p></div>
-            <div class="lc-services__card"><div class="lc-services__icon"><i class="fa fa-users"></i></div><h3 class="lc-services__card-title">Corporate &amp; Business Law</h3><p class="lc-services__card-desc">Company incorporation &amp; structuring, contracts, MoUs &amp; agreements drafting, corporate compliance &amp; governance, startup legal advisory.</p></div>
-            <div class="lc-services__card"><div class="lc-services__icon"><i class="fa fa-file-contract"></i></div><h3 class="lc-services__card-title">Documentation &amp; Drafting</h3><p class="lc-services__card-desc">Legal notices &amp; replies, agreements, deeds &amp; affidavits, policy drafting &amp; legal vetting to protect your interests comprehensively.</p></div>
-            <div class="lc-services__card"><div class="lc-services__icon"><i class="fa fa-balance-scale"></i></div><h3 class="lc-services__card-title">Civil &amp; Commercial Matters</h3><p class="lc-services__card-desc">Property &amp; real estate advisory, commercial disputes &amp; recovery matters, negotiation &amp; settlement support for your business.</p></div>
-            <div class="lc-services__card"><div class="lc-services__icon"><i class="fa fa-gavel"></i></div><h3 class="lc-services__card-title">Compliance &amp; Regulatory Support</h3><p class="lc-services__card-desc">Business compliance advisory, legal due diligence, and ongoing legal support for enterprises navigating regulatory requirements.</p></div>
-            <div class="lc-services__card"><div class="lc-services__icon"><i class="fa fa-shield-halved"></i></div><h3 class="lc-services__card-title">Intellectual Property &amp; IP Rights</h3><p class="lc-services__card-desc">Trademark registration, copyright advisory, IP protection strategies, and enforcement of your brand and creative assets across industries.</p></div>
+          <div class="lc-services__card">
+            <div class="lc-services__icon"><i class="fa fa-landmark"></i></div>
+            <h3 class="lc-services__card-title">
+              Legal Advisory &amp; Consultation
+            </h3>
+            <p class="lc-services__card-desc">
+              General legal opinion &amp; case evaluation, preventive legal
+              strategies, risk analysis &amp; compliance guidance tailored to
+              your situation.
+            </p>
+          </div>
+          <div class="lc-services__card">
+            <div class="lc-services__icon"><i class="fa fa-users"></i></div>
+            <h3 class="lc-services__card-title">
+              Corporate &amp; Business Law
+            </h3>
+            <p class="lc-services__card-desc">
+              Company incorporation &amp; structuring, contracts, MoUs &amp;
+              agreements drafting, corporate compliance &amp; governance,
+              startup legal advisory.
+            </p>
+          </div>
+          <div class="lc-services__card">
+            <div class="lc-services__icon">
+              <i class="fa fa-file-contract"></i>
+            </div>
+            <h3 class="lc-services__card-title">
+              Documentation &amp; Drafting
+            </h3>
+            <p class="lc-services__card-desc">
+              Legal notices &amp; replies, agreements, deeds &amp; affidavits,
+              policy drafting &amp; legal vetting to protect your interests
+              comprehensively.
+            </p>
+          </div>
+          <div class="lc-services__card">
+            <div class="lc-services__icon">
+              <i class="fa fa-balance-scale"></i>
+            </div>
+            <h3 class="lc-services__card-title">
+              Civil &amp; Commercial Matters
+            </h3>
+            <p class="lc-services__card-desc">
+              Property &amp; real estate advisory, commercial disputes &amp;
+              recovery matters, negotiation &amp; settlement support for your
+              business.
+            </p>
+          </div>
+          <div class="lc-services__card">
+            <div class="lc-services__icon"><i class="fa fa-gavel"></i></div>
+            <h3 class="lc-services__card-title">
+              Compliance &amp; Regulatory Support
+            </h3>
+            <p class="lc-services__card-desc">
+              Business compliance advisory, legal due diligence, and ongoing
+              legal support for enterprises navigating regulatory requirements.
+            </p>
+          </div>
+          <div class="lc-services__card">
+            <div class="lc-services__icon">
+              <i class="fa fa-shield-halved"></i>
+            </div>
+            <h3 class="lc-services__card-title">
+              Intellectual Property &amp; IP Rights
+            </h3>
+            <p class="lc-services__card-desc">
+              Trademark registration, copyright advisory, IP protection
+              strategies, and enforcement of your brand and creative assets
+              across industries.
+            </p>
+          </div>
         </div>
         <!-- Mobile carousel -->
         <div class="mob-carousel services-carousel" id="svcCarousel">
-            <div class="mob-carousel__track-wrap"><div class="mob-carousel__track" id="svcTrack">
-                <div class="mob-carousel__slide"><div class="lc-services__card"><div class="lc-services__icon"><i class="fa fa-landmark"></i></div><h3 class="lc-services__card-title">Legal Advisory &amp; Consultation</h3><p class="lc-services__card-desc">General legal opinion &amp; case evaluation, preventive legal strategies, risk analysis &amp; compliance guidance tailored to your situation.</p></div></div>
-                <div class="mob-carousel__slide"><div class="lc-services__card"><div class="lc-services__icon"><i class="fa fa-users"></i></div><h3 class="lc-services__card-title">Corporate &amp; Business Law</h3><p class="lc-services__card-desc">Company incorporation &amp; structuring, contracts, MoUs &amp; agreements drafting, corporate compliance &amp; governance, startup advisory.</p></div></div>
-                <div class="mob-carousel__slide"><div class="lc-services__card"><div class="lc-services__icon"><i class="fa fa-file-contract"></i></div><h3 class="lc-services__card-title">Documentation &amp; Drafting</h3><p class="lc-services__card-desc">Legal notices &amp; replies, agreements, deeds &amp; affidavits, policy drafting &amp; legal vetting to protect your interests.</p></div></div>
-                <div class="mob-carousel__slide"><div class="lc-services__card"><div class="lc-services__icon"><i class="fa fa-balance-scale"></i></div><h3 class="lc-services__card-title">Civil &amp; Commercial Matters</h3><p class="lc-services__card-desc">Property &amp; real estate advisory, commercial disputes &amp; recovery matters, negotiation &amp; settlement support for your business.</p></div></div>
-                <div class="mob-carousel__slide"><div class="lc-services__card"><div class="lc-services__icon"><i class="fa fa-gavel"></i></div><h3 class="lc-services__card-title">Compliance &amp; Regulatory</h3><p class="lc-services__card-desc">Business compliance advisory, legal due diligence, and ongoing support for enterprises navigating regulatory requirements.</p></div></div>
-                <div class="mob-carousel__slide"><div class="lc-services__card"><div class="lc-services__icon"><i class="fa fa-shield-halved"></i></div><h3 class="lc-services__card-title">Intellectual Property &amp; IP Rights</h3><p class="lc-services__card-desc">Trademark registration, copyright advisory, IP protection strategies, and brand asset enforcement across industries.</p></div></div>
-            </div></div>
-            <div class="mob-carousel__dots" id="svcDots"></div>
-            <div class="mob-carousel__nav">
-                <button class="mob-carousel__btn" data-cid="svc" data-dir="prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="mob-carousel__btn" data-cid="svc" data-dir="next"><i class="fas fa-chevron-right"></i></button>
+          <div class="mob-carousel__track-wrap">
+            <div class="mob-carousel__track" id="svcTrack">
+              <div class="mob-carousel__slide">
+                <div class="lc-services__card">
+                  <div class="lc-services__icon">
+                    <i class="fa fa-landmark"></i>
+                  </div>
+                  <h3 class="lc-services__card-title">
+                    Legal Advisory &amp; Consultation
+                  </h3>
+                  <p class="lc-services__card-desc">
+                    General legal opinion &amp; case evaluation, preventive
+                    legal strategies, risk analysis &amp; compliance guidance
+                    tailored to your situation.
+                  </p>
+                </div>
+              </div>
+              <div class="mob-carousel__slide">
+                <div class="lc-services__card">
+                  <div class="lc-services__icon">
+                    <i class="fa fa-users"></i>
+                  </div>
+                  <h3 class="lc-services__card-title">
+                    Corporate &amp; Business Law
+                  </h3>
+                  <p class="lc-services__card-desc">
+                    Company incorporation &amp; structuring, contracts, MoUs
+                    &amp; agreements drafting, corporate compliance &amp;
+                    governance, startup advisory.
+                  </p>
+                </div>
+              </div>
+              <div class="mob-carousel__slide">
+                <div class="lc-services__card">
+                  <div class="lc-services__icon">
+                    <i class="fa fa-file-contract"></i>
+                  </div>
+                  <h3 class="lc-services__card-title">
+                    Documentation &amp; Drafting
+                  </h3>
+                  <p class="lc-services__card-desc">
+                    Legal notices &amp; replies, agreements, deeds &amp;
+                    affidavits, policy drafting &amp; legal vetting to protect
+                    your interests.
+                  </p>
+                </div>
+              </div>
+              <div class="mob-carousel__slide">
+                <div class="lc-services__card">
+                  <div class="lc-services__icon">
+                    <i class="fa fa-balance-scale"></i>
+                  </div>
+                  <h3 class="lc-services__card-title">
+                    Civil &amp; Commercial Matters
+                  </h3>
+                  <p class="lc-services__card-desc">
+                    Property &amp; real estate advisory, commercial disputes
+                    &amp; recovery matters, negotiation &amp; settlement support
+                    for your business.
+                  </p>
+                </div>
+              </div>
+              <div class="mob-carousel__slide">
+                <div class="lc-services__card">
+                  <div class="lc-services__icon">
+                    <i class="fa fa-gavel"></i>
+                  </div>
+                  <h3 class="lc-services__card-title">
+                    Compliance &amp; Regulatory
+                  </h3>
+                  <p class="lc-services__card-desc">
+                    Business compliance advisory, legal due diligence, and
+                    ongoing support for enterprises navigating regulatory
+                    requirements.
+                  </p>
+                </div>
+              </div>
+              <div class="mob-carousel__slide">
+                <div class="lc-services__card">
+                  <div class="lc-services__icon">
+                    <i class="fa fa-shield-halved"></i>
+                  </div>
+                  <h3 class="lc-services__card-title">
+                    Intellectual Property &amp; IP Rights
+                  </h3>
+                  <p class="lc-services__card-desc">
+                    Trademark registration, copyright advisory, IP protection
+                    strategies, and brand asset enforcement across industries.
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="mob-carousel__dots" id="svcDots"></div>
+          <div class="mob-carousel__nav">
+            <button class="mob-carousel__btn" data-cid="svc" data-dir="prev">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="mob-carousel__btn" data-cid="svc" data-dir="next">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- WHY CHOOSE US -->
-<section class="lc-why" id="why">
-    <div class="lc-why__split">
+    <!-- WHY CHOOSE US -->
+    <section class="lc-why" id="why">
+      <div class="lc-why__split">
         <div class="lc-why__image-side">
-            <img src="img/feature.webp" alt="Why Choose Suri's Legal">
-            <div class="lc-why__image-overlay"></div>
-            <div class="lc-why__image-badge"><div class="lc-why__badge-num">500+</div><div class="lc-why__badge-text">Satisfied Clients</div></div>
+          <img src="img/feature.webp" alt="Why Choose Suri's Legal" />
+          <div class="lc-why__image-overlay"></div>
+          <div class="lc-why__image-badge">
+            <div class="lc-why__badge-num">500+</div>
+            <div class="lc-why__badge-text">Satisfied Clients</div>
+          </div>
         </div>
         <div class="lc-why__content-side">
-            <span class="lc-label">Our Strengths</span>
-            <h2 class="lc-section-head__title" style="text-align:left;margin-top:14px;color:var(--clr-white)">Why Businesses<br>Trust Suri's Legal</h2>
-            <span class="lc-divider lc-divider--left" style="margin-top:18px"></span>
-            <div class="lc-why__features-new">
-                <div class="lc-why__feat"><span class="lc-why__feat-number">01</span><div class="lc-why__feat-bar"></div><div class="lc-why__feat-body"><h3 class="lc-why__feat-title">Experienced &amp; Professional Guidance</h3><p class="lc-why__feat-desc">Over a decade of hands-on experience across civil, corporate, and compliance law means your matters are handled with precision and depth every time.</p></div></div>
-                <div class="lc-why__feat"><span class="lc-why__feat-number">02</span><div class="lc-why__feat-bar"></div><div class="lc-why__feat-body"><h3 class="lc-why__feat-title">Ethical, Transparent &amp; Confidential</h3><p class="lc-why__feat-desc">We operate on a foundation of trust. Every case is treated with the strictest confidentiality and unwavering ethical commitment from day one.</p></div></div>
-                <div class="lc-why__feat"><span class="lc-why__feat-number">03</span><div class="lc-why__feat-bar"></div><div class="lc-why__feat-body"><h3 class="lc-why__feat-title">Customized Strategies, Reliable Results</h3><p class="lc-why__feat-desc">No two cases are alike. We design bespoke legal strategies aligned to your goals — with responsive support and clear timelines throughout.</p></div></div>
+          <span class="lc-label">Our Strengths</span>
+          <h2
+            class="lc-section-head__title"
+            style="text-align: left; margin-top: 14px; color: var(--clr-white)"
+          >
+            Why Businesses<br />Trust Suri's Legal
+          </h2>
+          <span
+            class="lc-divider lc-divider--left"
+            style="margin-top: 18px"
+          ></span>
+          <div class="lc-why__features-new">
+            <div class="lc-why__feat">
+              <span class="lc-why__feat-number">01</span>
+              <div class="lc-why__feat-bar"></div>
+              <div class="lc-why__feat-body">
+                <h3 class="lc-why__feat-title">
+                  Experienced &amp; Professional Guidance
+                </h3>
+                <p class="lc-why__feat-desc">
+                  Over a decade of hands-on experience across civil, corporate,
+                  and compliance law means your matters are handled with
+                  precision and depth every time.
+                </p>
+              </div>
             </div>
+            <div class="lc-why__feat">
+              <span class="lc-why__feat-number">02</span>
+              <div class="lc-why__feat-bar"></div>
+              <div class="lc-why__feat-body">
+                <h3 class="lc-why__feat-title">
+                  Ethical, Transparent &amp; Confidential
+                </h3>
+                <p class="lc-why__feat-desc">
+                  We operate on a foundation of trust. Every case is treated
+                  with the strictest confidentiality and unwavering ethical
+                  commitment from day one.
+                </p>
+              </div>
+            </div>
+            <div class="lc-why__feat">
+              <span class="lc-why__feat-number">03</span>
+              <div class="lc-why__feat-bar"></div>
+              <div class="lc-why__feat-body">
+                <h3 class="lc-why__feat-title">
+                  Customized Strategies, Reliable Results
+                </h3>
+                <p class="lc-why__feat-desc">
+                  No two cases are alike. We design bespoke legal strategies
+                  aligned to your goals — with responsive support and clear
+                  timelines throughout.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-    <div class="lc-why__stat-strip">
-        <div class="lc-why__stat-item"><div class="lc-why__stat-num">10+</div><div class="lc-why__stat-label">Years of Practice</div></div>
-        <div class="lc-why__stat-item"><div class="lc-why__stat-num">99%</div><div class="lc-why__stat-label">Success Rate</div></div>
-        <div class="lc-why__stat-item"><div class="lc-why__stat-num">500+</div><div class="lc-why__stat-label">Clients Served</div></div>
-    </div>
-</section>
+      </div>
+      <div class="lc-why__stat-strip">
+        <div class="lc-why__stat-item">
+          <div class="lc-why__stat-num">10+</div>
+          <div class="lc-why__stat-label">Years of Practice</div>
+        </div>
+        <div class="lc-why__stat-item">
+          <div class="lc-why__stat-num">99%</div>
+          <div class="lc-why__stat-label">Success Rate</div>
+        </div>
+        <div class="lc-why__stat-item">
+          <div class="lc-why__stat-num">500+</div>
+          <div class="lc-why__stat-label">Clients Served</div>
+        </div>
+      </div>
+    </section>
 
-<!-- OUR APPROACH -->
-<section class="lc-approach lc-section" id="approach">
-    <div class="lc-container">
+    <!-- OUR APPROACH -->
+    <section class="lc-approach lc-section" id="approach">
+      <div class="lc-container">
         <div class="lc-section-head">
-            <span class="lc-label">How We Work</span>
-            <h2 class="lc-section-head__title">Our Proven Approach</h2>
-            <span class="lc-divider"></span>
+          <span class="lc-label">How We Work</span>
+          <h2 class="lc-section-head__title">Our Proven Approach</h2>
+          <span class="lc-divider"></span>
         </div>
         <!-- Desktop zigzag -->
         <div class="lc-approach__timeline">
-            <div class="lc-approach__spine"></div>
-            <div class="lc-approach__steps">
-                <div class="lc-approach__step"><div class="lc-approach__step-content"><div class="lc-approach__step-num">STEP 01</div><h3 class="lc-approach__step-title">Understand</h3><p class="lc-approach__step-desc">We listen closely and thoroughly analyze your legal requirement to grasp the full context and stakes involved.</p></div><div class="lc-approach__step-connector"></div><div class="lc-approach__step-node"><i class="fa-solid fa-ear-listen"></i></div></div>
-                <div class="lc-approach__step"><div class="lc-approach__step-node"><i class="fa-solid fa-scale-balanced"></i></div><div class="lc-approach__step-connector"></div><div class="lc-approach__step-content"><div class="lc-approach__step-num">STEP 02</div><h3 class="lc-approach__step-title">Evaluate</h3><p class="lc-approach__step-desc">We identify risks, opportunities, and viable solutions through rigorous legal research and analysis of all angles.</p></div></div>
-                <div class="lc-approach__step"><div class="lc-approach__step-content"><div class="lc-approach__step-num">STEP 03</div><h3 class="lc-approach__step-title">Advise</h3><p class="lc-approach__step-desc">We deliver clear, actionable legal guidance backed by expertise, precedent, and transparent reasoning.</p></div><div class="lc-approach__step-connector"></div><div class="lc-approach__step-node"><i class="fa-solid fa-gavel"></i></div></div>
-                <div class="lc-approach__step"><div class="lc-approach__step-node"><i class="fa-solid fa-handshake"></i></div><div class="lc-approach__step-connector"></div><div class="lc-approach__step-content"><div class="lc-approach__step-num">STEP 04</div><h3 class="lc-approach__step-title">Support</h3><p class="lc-approach__step-desc">We provide continuous assistance, follow-through, and legal backing until full resolution is achieved for you.</p></div></div>
+          <div class="lc-approach__spine"></div>
+          <div class="lc-approach__steps">
+            <div class="lc-approach__step">
+              <div class="lc-approach__step-content">
+                <div class="lc-approach__step-num">STEP 01</div>
+                <h3 class="lc-approach__step-title">Understand</h3>
+                <p class="lc-approach__step-desc">
+                  We listen closely and thoroughly analyze your legal
+                  requirement to grasp the full context and stakes involved.
+                </p>
+              </div>
+              <div class="lc-approach__step-connector"></div>
+              <div class="lc-approach__step-node">
+                <i class="fa-solid fa-ear-listen"></i>
+              </div>
             </div>
+            <div class="lc-approach__step">
+              <div class="lc-approach__step-node">
+                <i class="fa-solid fa-scale-balanced"></i>
+              </div>
+              <div class="lc-approach__step-connector"></div>
+              <div class="lc-approach__step-content">
+                <div class="lc-approach__step-num">STEP 02</div>
+                <h3 class="lc-approach__step-title">Evaluate</h3>
+                <p class="lc-approach__step-desc">
+                  We identify risks, opportunities, and viable solutions through
+                  rigorous legal research and analysis of all angles.
+                </p>
+              </div>
+            </div>
+            <div class="lc-approach__step">
+              <div class="lc-approach__step-content">
+                <div class="lc-approach__step-num">STEP 03</div>
+                <h3 class="lc-approach__step-title">Advise</h3>
+                <p class="lc-approach__step-desc">
+                  We deliver clear, actionable legal guidance backed by
+                  expertise, precedent, and transparent reasoning.
+                </p>
+              </div>
+              <div class="lc-approach__step-connector"></div>
+              <div class="lc-approach__step-node">
+                <i class="fa-solid fa-gavel"></i>
+              </div>
+            </div>
+            <div class="lc-approach__step">
+              <div class="lc-approach__step-node">
+                <i class="fa-solid fa-handshake"></i>
+              </div>
+              <div class="lc-approach__step-connector"></div>
+              <div class="lc-approach__step-content">
+                <div class="lc-approach__step-num">STEP 04</div>
+                <h3 class="lc-approach__step-title">Support</h3>
+                <p class="lc-approach__step-desc">
+                  We provide continuous assistance, follow-through, and legal
+                  backing until full resolution is achieved for you.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- Mobile carousel -->
         <div class="mob-carousel approach-carousel" id="apprCarousel">
-            <div class="mob-carousel__track-wrap"><div class="mob-carousel__track" id="apprTrack">
-                <div class="mob-carousel__slide"><div class="approach-card"><div class="approach-card__icon"><i class="fa-solid fa-ear-listen"></i></div><div class="approach-card__num">STEP 01</div><h3 class="approach-card__title">Understand</h3><p class="approach-card__desc">We listen closely and thoroughly analyze your legal requirement to grasp the full context and stakes involved.</p></div></div>
-                <div class="mob-carousel__slide"><div class="approach-card"><div class="approach-card__icon"><i class="fa-solid fa-scale-balanced"></i></div><div class="approach-card__num">STEP 02</div><h3 class="approach-card__title">Evaluate</h3><p class="approach-card__desc">We identify risks, opportunities, and viable solutions through rigorous legal research and analysis of all angles.</p></div></div>
-                <div class="mob-carousel__slide"><div class="approach-card"><div class="approach-card__icon"><i class="fa-solid fa-gavel"></i></div><div class="approach-card__num">STEP 03</div><h3 class="approach-card__title">Advise</h3><p class="approach-card__desc">We deliver clear, actionable legal guidance backed by expertise, precedent, and transparent reasoning.</p></div></div>
-                <div class="mob-carousel__slide"><div class="approach-card"><div class="approach-card__icon"><i class="fa-solid fa-handshake"></i></div><div class="approach-card__num">STEP 04</div><h3 class="approach-card__title">Support</h3><p class="approach-card__desc">We provide continuous assistance, follow-through, and legal backing until full resolution is achieved for you.</p></div></div>
-            </div></div>
-            <div class="mob-carousel__dots" id="apprDots"></div>
-            <div class="mob-carousel__nav">
-                <button class="mob-carousel__btn" data-cid="appr" data-dir="prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="mob-carousel__btn" data-cid="appr" data-dir="next"><i class="fas fa-chevron-right"></i></button>
+          <div class="mob-carousel__track-wrap">
+            <div class="mob-carousel__track" id="apprTrack">
+              <div class="mob-carousel__slide">
+                <div class="approach-card">
+                  <div class="approach-card__icon">
+                    <i class="fa-solid fa-ear-listen"></i>
+                  </div>
+                  <div class="approach-card__num">STEP 01</div>
+                  <h3 class="approach-card__title">Understand</h3>
+                  <p class="approach-card__desc">
+                    We listen closely and thoroughly analyze your legal
+                    requirement to grasp the full context and stakes involved.
+                  </p>
+                </div>
+              </div>
+              <div class="mob-carousel__slide">
+                <div class="approach-card">
+                  <div class="approach-card__icon">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                  </div>
+                  <div class="approach-card__num">STEP 02</div>
+                  <h3 class="approach-card__title">Evaluate</h3>
+                  <p class="approach-card__desc">
+                    We identify risks, opportunities, and viable solutions
+                    through rigorous legal research and analysis of all angles.
+                  </p>
+                </div>
+              </div>
+              <div class="mob-carousel__slide">
+                <div class="approach-card">
+                  <div class="approach-card__icon">
+                    <i class="fa-solid fa-gavel"></i>
+                  </div>
+                  <div class="approach-card__num">STEP 03</div>
+                  <h3 class="approach-card__title">Advise</h3>
+                  <p class="approach-card__desc">
+                    We deliver clear, actionable legal guidance backed by
+                    expertise, precedent, and transparent reasoning.
+                  </p>
+                </div>
+              </div>
+              <div class="mob-carousel__slide">
+                <div class="approach-card">
+                  <div class="approach-card__icon">
+                    <i class="fa-solid fa-handshake"></i>
+                  </div>
+                  <div class="approach-card__num">STEP 04</div>
+                  <h3 class="approach-card__title">Support</h3>
+                  <p class="approach-card__desc">
+                    We provide continuous assistance, follow-through, and legal
+                    backing until full resolution is achieved for you.
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="mob-carousel__dots" id="apprDots"></div>
+          <div class="mob-carousel__nav">
+            <button class="mob-carousel__btn" data-cid="appr" data-dir="prev">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="mob-carousel__btn" data-cid="appr" data-dir="next">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
         </div>
-    </div>
-    <div class="lc-approach__footer-strip">
-    </div>
-</section>
+      </div>
+      <div class="lc-approach__footer-strip"></div>
+    </section>
 
-<!-- INDUSTRIES -->
-<section class="lc-industries lc-section" id="industries">
-    <div class="lc-container">
+    <!-- INDUSTRIES -->
+    <section class="lc-industries lc-section" id="industries">
+      <div class="lc-container">
         <div class="lc-section-head lc-section-head--light">
-            <span class="lc-label">Who We Serve</span>
-            <h2 class="lc-section-head__title">Industries We Serve</h2>
-            <span class="lc-divider"></span>
+          <span class="lc-label">Who We Serve</span>
+          <h2 class="lc-section-head__title">Industries We Serve</h2>
+          <span class="lc-divider"></span>
         </div>
-    </div>
-    <div class="lc-industries__bg-text">LEGAL</div>
-    <div class="lc-container">
+      </div>
+      <div class="lc-industries__bg-text">LEGAL</div>
+      <div class="lc-container">
         <!-- Desktop mosaic -->
         <div class="lc-industries__mosaic">
-            <div class="lc-ind-card"><div class="lc-ind-card__bg"></div><div class="lc-ind-card__overlay"></div><div class="lc-ind-card__inner"><div class="lc-ind-card__icon"><i class="fas fa-rocket"></i></div><div class="lc-ind-card__line"></div><h3 class="lc-ind-card__title">Startups &amp;<br>Entrepreneurs</h3><p class="lc-ind-card__desc">From incorporation to IP protection, we give early-stage businesses a solid legal foundation to scale confidently.</p></div></div>
-            <div class="lc-ind-card"><div class="lc-ind-card__bg"></div><div class="lc-ind-card__overlay"></div><div class="lc-ind-card__inner"><div class="lc-ind-card__icon"><i class="fas fa-building"></i></div><div class="lc-ind-card__line"></div><h3 class="lc-ind-card__title">SMEs &amp; Corporates</h3><p class="lc-ind-card__desc">Governance, contracts, and compliance support for growing mid-size businesses and large corporate entities.</p></div></div>
-            <div class="lc-ind-card"><div class="lc-ind-card__bg"></div><div class="lc-ind-card__overlay"></div><div class="lc-ind-card__inner"><div class="lc-ind-card__icon"><i class="fas fa-hard-hat"></i></div><div class="lc-ind-card__line"></div><h3 class="lc-ind-card__title">Real Estate &amp;<br>Construction</h3><p class="lc-ind-card__desc">Deed verifications, project agreements, RERA compliance, and property dispute resolution.</p></div></div>
-            <div class="lc-ind-card"><div class="lc-ind-card__bg"></div><div class="lc-ind-card__overlay"></div><div class="lc-ind-card__inner"><div class="lc-ind-card__icon"><i class="fas fa-laptop-code"></i></div><div class="lc-ind-card__line"></div><h3 class="lc-ind-card__title">IT &amp; Service<br>Businesses</h3><p class="lc-ind-card__desc">Data privacy policies, SaaS agreements, vendor contracts, and tech-sector compliance support.</p></div></div>
-            <div class="lc-ind-card"><div class="lc-ind-card__bg"></div><div class="lc-ind-card__overlay"></div><div class="lc-ind-card__inner"><div class="lc-ind-card__icon"><i class="fas fa-user-friends"></i></div><div class="lc-ind-card__line"></div><h3 class="lc-ind-card__title">Individuals &amp;<br>Professionals</h3><p class="lc-ind-card__desc">Personal legal advisory, notice handling, civil dispute support, and documentation services for every individual.</p></div></div>
+          <div class="lc-ind-card">
+            <div class="lc-ind-card__bg"></div>
+            <div class="lc-ind-card__overlay"></div>
+            <div class="lc-ind-card__inner">
+              <div class="lc-ind-card__icon"><i class="fas fa-rocket"></i></div>
+              <div class="lc-ind-card__line"></div>
+              <h3 class="lc-ind-card__title">
+                Startups &amp;<br />Entrepreneurs
+              </h3>
+              <p class="lc-ind-card__desc">
+                From incorporation to IP protection, we give early-stage
+                businesses a solid legal foundation to scale confidently.
+              </p>
+            </div>
+          </div>
+          <div class="lc-ind-card">
+            <div class="lc-ind-card__bg"></div>
+            <div class="lc-ind-card__overlay"></div>
+            <div class="lc-ind-card__inner">
+              <div class="lc-ind-card__icon">
+                <i class="fas fa-building"></i>
+              </div>
+              <div class="lc-ind-card__line"></div>
+              <h3 class="lc-ind-card__title">SMEs &amp; Corporates</h3>
+              <p class="lc-ind-card__desc">
+                Governance, contracts, and compliance support for growing
+                mid-size businesses and large corporate entities.
+              </p>
+            </div>
+          </div>
+          <div class="lc-ind-card">
+            <div class="lc-ind-card__bg"></div>
+            <div class="lc-ind-card__overlay"></div>
+            <div class="lc-ind-card__inner">
+              <div class="lc-ind-card__icon">
+                <i class="fas fa-hard-hat"></i>
+              </div>
+              <div class="lc-ind-card__line"></div>
+              <h3 class="lc-ind-card__title">
+                Real Estate &amp;<br />Construction
+              </h3>
+              <p class="lc-ind-card__desc">
+                Deed verifications, project agreements, RERA compliance, and
+                property dispute resolution.
+              </p>
+            </div>
+          </div>
+          <div class="lc-ind-card">
+            <div class="lc-ind-card__bg"></div>
+            <div class="lc-ind-card__overlay"></div>
+            <div class="lc-ind-card__inner">
+              <div class="lc-ind-card__icon">
+                <i class="fas fa-laptop-code"></i>
+              </div>
+              <div class="lc-ind-card__line"></div>
+              <h3 class="lc-ind-card__title">
+                IT &amp; Service<br />Businesses
+              </h3>
+              <p class="lc-ind-card__desc">
+                Data privacy policies, SaaS agreements, vendor contracts, and
+                tech-sector compliance support.
+              </p>
+            </div>
+          </div>
+          <div class="lc-ind-card">
+            <div class="lc-ind-card__bg"></div>
+            <div class="lc-ind-card__overlay"></div>
+            <div class="lc-ind-card__inner">
+              <div class="lc-ind-card__icon">
+                <i class="fas fa-user-friends"></i>
+              </div>
+              <div class="lc-ind-card__line"></div>
+              <h3 class="lc-ind-card__title">
+                Individuals &amp;<br />Professionals
+              </h3>
+              <p class="lc-ind-card__desc">
+                Personal legal advisory, notice handling, civil dispute support,
+                and documentation services for every individual.
+              </p>
+            </div>
+          </div>
         </div>
         <!-- Mobile carousel -->
         <div class="mob-carousel industries-carousel" id="indCarousel">
-            <div class="mob-carousel__track-wrap"><div class="mob-carousel__track" id="indTrack">
-                <div class="mob-carousel__slide"><div class="mob-ind-card"><div class="overlay-abs" style="background:linear-gradient(135deg,#1a2535,#0d1520)"></div><div class="overlay-abs" style="background:linear-gradient(160deg,rgba(28,32,40,0.3),rgba(13,13,13,0.82))"></div><div class="inner-abs"><div class="ia-icon"><i class="fas fa-rocket"></i></div><h3 class="ia-title">Startups &amp; Entrepreneurs</h3><p class="ia-desc">From incorporation to IP protection, a solid legal foundation to scale confidently.</p></div></div></div>
-                <div class="mob-carousel__slide"><div class="mob-ind-card"><div class="overlay-abs" style="background:linear-gradient(135deg,#1e2830,#111820)"></div><div class="overlay-abs" style="background:linear-gradient(160deg,rgba(28,32,40,0.3),rgba(13,13,13,0.82))"></div><div class="inner-abs"><div class="ia-icon"><i class="fas fa-building"></i></div><h3 class="ia-title">SMEs &amp; Corporates</h3><p class="ia-desc">Governance, contracts, and compliance support for growing businesses and large corporate entities.</p></div></div></div>
-                <div class="mob-carousel__slide"><div class="mob-ind-card"><div class="overlay-abs" style="background:linear-gradient(135deg,#221e2e,#13101a)"></div><div class="overlay-abs" style="background:linear-gradient(160deg,rgba(28,32,40,0.3),rgba(13,13,13,0.82))"></div><div class="inner-abs"><div class="ia-icon"><i class="fas fa-hard-hat"></i></div><h3 class="ia-title">Real Estate &amp; Construction</h3><p class="ia-desc">Deed verifications, project agreements, RERA compliance, and property dispute resolution.</p></div></div></div>
-                <div class="mob-carousel__slide"><div class="mob-ind-card"><div class="overlay-abs" style="background:linear-gradient(135deg,#1c2820,#0e1810)"></div><div class="overlay-abs" style="background:linear-gradient(160deg,rgba(28,32,40,0.3),rgba(13,13,13,0.82))"></div><div class="inner-abs"><div class="ia-icon"><i class="fas fa-laptop-code"></i></div><h3 class="ia-title">IT &amp; Service Businesses</h3><p class="ia-desc">Data privacy policies, SaaS agreements, vendor contracts, and tech-sector compliance support.</p></div></div></div>
-                <div class="mob-carousel__slide"><div class="mob-ind-card"><div class="overlay-abs" style="background:linear-gradient(135deg,#28201c,#180f0a)"></div><div class="overlay-abs" style="background:linear-gradient(160deg,rgba(28,32,40,0.3),rgba(13,13,13,0.82))"></div><div class="inner-abs"><div class="ia-icon"><i class="fas fa-user-friends"></i></div><h3 class="ia-title">Individuals &amp; Professionals</h3><p class="ia-desc">Personal legal advisory, notice handling, civil dispute support, and documentation services.</p></div></div></div>
-            </div></div>
-            <div class="mob-carousel__dots" id="indDots"></div>
-            <div class="mob-carousel__nav">
-                <button class="mob-carousel__btn" data-cid="ind" data-dir="prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="mob-carousel__btn" data-cid="ind" data-dir="next"><i class="fas fa-chevron-right"></i></button>
+          <div class="mob-carousel__track-wrap">
+            <div class="mob-carousel__track" id="indTrack">
+              <div class="mob-carousel__slide">
+                <div class="mob-ind-card">
+                  <div
+                    class="overlay-abs"
+                    style="
+                      background: linear-gradient(135deg, #1a2535, #0d1520);
+                    "
+                  ></div>
+                  <div
+                    class="overlay-abs"
+                    style="
+                      background: linear-gradient(
+                        160deg,
+                        rgba(28, 32, 40, 0.3),
+                        rgba(13, 13, 13, 0.82)
+                      );
+                    "
+                  ></div>
+                  <div class="inner-abs">
+                    <div class="ia-icon"><i class="fas fa-rocket"></i></div>
+                    <h3 class="ia-title">Startups &amp; Entrepreneurs</h3>
+                    <p class="ia-desc">
+                      From incorporation to IP protection, a solid legal
+                      foundation to scale confidently.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="mob-carousel__slide">
+                <div class="mob-ind-card">
+                  <div
+                    class="overlay-abs"
+                    style="
+                      background: linear-gradient(135deg, #1e2830, #111820);
+                    "
+                  ></div>
+                  <div
+                    class="overlay-abs"
+                    style="
+                      background: linear-gradient(
+                        160deg,
+                        rgba(28, 32, 40, 0.3),
+                        rgba(13, 13, 13, 0.82)
+                      );
+                    "
+                  ></div>
+                  <div class="inner-abs">
+                    <div class="ia-icon"><i class="fas fa-building"></i></div>
+                    <h3 class="ia-title">SMEs &amp; Corporates</h3>
+                    <p class="ia-desc">
+                      Governance, contracts, and compliance support for growing
+                      businesses and large corporate entities.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="mob-carousel__slide">
+                <div class="mob-ind-card">
+                  <div
+                    class="overlay-abs"
+                    style="
+                      background: linear-gradient(135deg, #221e2e, #13101a);
+                    "
+                  ></div>
+                  <div
+                    class="overlay-abs"
+                    style="
+                      background: linear-gradient(
+                        160deg,
+                        rgba(28, 32, 40, 0.3),
+                        rgba(13, 13, 13, 0.82)
+                      );
+                    "
+                  ></div>
+                  <div class="inner-abs">
+                    <div class="ia-icon"><i class="fas fa-hard-hat"></i></div>
+                    <h3 class="ia-title">Real Estate &amp; Construction</h3>
+                    <p class="ia-desc">
+                      Deed verifications, project agreements, RERA compliance,
+                      and property dispute resolution.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="mob-carousel__slide">
+                <div class="mob-ind-card">
+                  <div
+                    class="overlay-abs"
+                    style="
+                      background: linear-gradient(135deg, #1c2820, #0e1810);
+                    "
+                  ></div>
+                  <div
+                    class="overlay-abs"
+                    style="
+                      background: linear-gradient(
+                        160deg,
+                        rgba(28, 32, 40, 0.3),
+                        rgba(13, 13, 13, 0.82)
+                      );
+                    "
+                  ></div>
+                  <div class="inner-abs">
+                    <div class="ia-icon">
+                      <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="ia-title">IT &amp; Service Businesses</h3>
+                    <p class="ia-desc">
+                      Data privacy policies, SaaS agreements, vendor contracts,
+                      and tech-sector compliance support.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="mob-carousel__slide">
+                <div class="mob-ind-card">
+                  <div
+                    class="overlay-abs"
+                    style="
+                      background: linear-gradient(135deg, #28201c, #180f0a);
+                    "
+                  ></div>
+                  <div
+                    class="overlay-abs"
+                    style="
+                      background: linear-gradient(
+                        160deg,
+                        rgba(28, 32, 40, 0.3),
+                        rgba(13, 13, 13, 0.82)
+                      );
+                    "
+                  ></div>
+                  <div class="inner-abs">
+                    <div class="ia-icon">
+                      <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3 class="ia-title">Individuals &amp; Professionals</h3>
+                    <p class="ia-desc">
+                      Personal legal advisory, notice handling, civil dispute
+                      support, and documentation services.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="mob-carousel__dots" id="indDots"></div>
+          <div class="mob-carousel__nav">
+            <button class="mob-carousel__btn" data-cid="ind" data-dir="prev">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="mob-carousel__btn" data-cid="ind" data-dir="next">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- COMMITMENT -->
-<section class="lc-commitment lc-section">
-    <div class="lc-container">
+    <!-- COMMITMENT -->
+    <section class="lc-commitment lc-section">
+      <div class="lc-container">
         <div class="lc-commitment__inner">
-            <span class="lc-label">Our Commitment</span>
-            <p class="lc-commitment__quote">"We believe legal consulting is not just about solving disputes — but preventing them. Our focus is long-term legal stability and informed compliance for our clients."</p>
-            <div class="lc-commitment__author"><div class="lc-commitment__author-line"></div><span class="lc-commitment__author-name">Suri's Legal Consulting</span><div class="lc-commitment__author-line"></div></div>
+          <span class="lc-label">Our Commitment</span>
+          <p class="lc-commitment__quote">
+            "We believe legal consulting is not just about solving disputes —
+            but preventing them. Our focus is long-term legal stability and
+            informed compliance for our clients."
+          </p>
+          <div class="lc-commitment__author">
+            <div class="lc-commitment__author-line"></div>
+            <span class="lc-commitment__author-name"
+              >Suri's Legal Consulting</span
+            >
+            <div class="lc-commitment__author-line"></div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- FAQs -->
-<section class="lc-faqs lc-section" id="faqs">
-    <div class="lc-container">
+    <!-- FAQs -->
+    <section class="lc-faqs lc-section" id="faqs">
+      <div class="lc-container">
         <div class="lc-faqs__grid">
-            <img src="img/faq.webp" alt="FAQs" class="lc-faqs__image">
-            <div>
-                <div class="lc-section-head lc-section-head--left" style="margin-bottom:32px">
-                    <span class="lc-label">Common Questions</span>
-                    <h2 class="lc-section-head__title">Have a Question?</h2>
-                    <span class="lc-divider lc-divider--left"></span>
-                </div>
-                <div class="lc-faqs__list">
-                    <details open><summary class="lc-faqs__question"><span class="lc-faqs__q-num">01</span><span class="lc-faqs__q-text">When should I consult a lawyer?</span><span class="lc-faqs__q-arrow"><i class="fas fa-chevron-right"></i></span></summary><div class="lc-faqs__answer">You should consult a lawyer as soon as you face a legal issue, receive a legal notice, or need guidance on your rights to avoid future complications.</div></details>
-                    <details><summary class="lc-faqs__question"><span class="lc-faqs__q-num">02</span><span class="lc-faqs__q-text">How can your law firm help with my legal case?</span><span class="lc-faqs__q-arrow"><i class="fas fa-chevron-right"></i></span></summary><div class="lc-faqs__answer">Our law firm provides professional legal advice, case evaluation, and representation, offering customized legal strategies based on your specific situation.</div></details>
-                    <details><summary class="lc-faqs__question"><span class="lc-faqs__q-num">03</span><span class="lc-faqs__q-text">Is my legal consultation confidential?</span><span class="lc-faqs__q-arrow"><i class="fas fa-chevron-right"></i></span></summary><div class="lc-faqs__answer">Yes, all legal consultations are strictly confidential, and we follow an ethical and transparent approach in handling every client matter.</div></details>
-                    <details><summary class="lc-faqs__question"><span class="lc-faqs__q-num">04</span><span class="lc-faqs__q-text">How long does a legal case usually take?</span><span class="lc-faqs__q-arrow"><i class="fas fa-chevron-right"></i></span></summary><div class="lc-faqs__answer">The duration depends on the nature and complexity of the matter; our lawyers guide you clearly on timelines and legal procedures involved.</div></details>
-                    <details><summary class="lc-faqs__question"><span class="lc-faqs__q-num">05</span><span class="lc-faqs__q-text">What documents should I bring for a consultation?</span><span class="lc-faqs__q-arrow"><i class="fas fa-chevron-right"></i></span></summary><div class="lc-faqs__answer">Bring all relevant documents such as agreements, notices, identity proof, and any communication related to your legal issue for accurate advice.</div></details>
-                </div>
-                <div class="lc-faqs__cta"><a href="#contact" class="lc-btn lc-btn--outline"><span>Ask More Questions</span><i class="fas fa-arrow-right"></i></a></div>
+          <img src="img/faq.webp" alt="FAQs" class="lc-faqs__image" />
+          <div>
+            <div
+              class="lc-section-head lc-section-head--left"
+              style="margin-bottom: 32px"
+            >
+              <span class="lc-label">Common Questions</span>
+              <h2 class="lc-section-head__title">Have a Question?</h2>
+              <span class="lc-divider lc-divider--left"></span>
             </div>
+            <div class="lc-faqs__list">
+              <details open>
+                <summary class="lc-faqs__question">
+                  <span class="lc-faqs__q-num">01</span
+                  ><span class="lc-faqs__q-text"
+                    >When should I consult a lawyer?</span
+                  ><span class="lc-faqs__q-arrow"
+                    ><i class="fas fa-chevron-right"></i
+                  ></span>
+                </summary>
+                <div class="lc-faqs__answer">
+                  You should consult a lawyer as soon as you face a legal issue,
+                  receive a legal notice, or need guidance on your rights to
+                  avoid future complications.
+                </div>
+              </details>
+              <details>
+                <summary class="lc-faqs__question">
+                  <span class="lc-faqs__q-num">02</span
+                  ><span class="lc-faqs__q-text"
+                    >How can your law firm help with my legal case?</span
+                  ><span class="lc-faqs__q-arrow"
+                    ><i class="fas fa-chevron-right"></i
+                  ></span>
+                </summary>
+                <div class="lc-faqs__answer">
+                  Our law firm provides professional legal advice, case
+                  evaluation, and representation, offering customized legal
+                  strategies based on your specific situation.
+                </div>
+              </details>
+              <details>
+                <summary class="lc-faqs__question">
+                  <span class="lc-faqs__q-num">03</span
+                  ><span class="lc-faqs__q-text"
+                    >Is my legal consultation confidential?</span
+                  ><span class="lc-faqs__q-arrow"
+                    ><i class="fas fa-chevron-right"></i
+                  ></span>
+                </summary>
+                <div class="lc-faqs__answer">
+                  Yes, all legal consultations are strictly confidential, and we
+                  follow an ethical and transparent approach in handling every
+                  client matter.
+                </div>
+              </details>
+              <details>
+                <summary class="lc-faqs__question">
+                  <span class="lc-faqs__q-num">04</span
+                  ><span class="lc-faqs__q-text"
+                    >How long does a legal case usually take?</span
+                  ><span class="lc-faqs__q-arrow"
+                    ><i class="fas fa-chevron-right"></i
+                  ></span>
+                </summary>
+                <div class="lc-faqs__answer">
+                  The duration depends on the nature and complexity of the
+                  matter; our lawyers guide you clearly on timelines and legal
+                  procedures involved.
+                </div>
+              </details>
+              <details>
+                <summary class="lc-faqs__question">
+                  <span class="lc-faqs__q-num">05</span
+                  ><span class="lc-faqs__q-text"
+                    >What documents should I bring for a consultation?</span
+                  ><span class="lc-faqs__q-arrow"
+                    ><i class="fas fa-chevron-right"></i
+                  ></span>
+                </summary>
+                <div class="lc-faqs__answer">
+                  Bring all relevant documents such as agreements, notices,
+                  identity proof, and any communication related to your legal
+                  issue for accurate advice.
+                </div>
+              </details>
+            </div>
+            <div class="lc-faqs__cta">
+              <a href="#contact" class="lc-btn lc-btn--outline"
+                ><span>Ask More Questions</span
+                ><i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- TESTIMONIALS -->
-<section class="lc-testimonials lc-section" id="testimonials">
-    <div class="lc-container">
+    <!-- TESTIMONIALS -->
+    <section class="lc-testimonials lc-section" id="testimonials">
+      <div class="lc-container">
         <div class="lc-section-head">
-            <span class="lc-label">Client Reviews</span>
-            <h2 class="lc-section-head__title">What Our Clients Say</h2>
-            <span class="lc-divider"></span>
+          <span class="lc-label">Client Reviews</span>
+          <h2 class="lc-section-head__title">What Our Clients Say</h2>
+          <span class="lc-divider"></span>
         </div>
         <!-- Desktop -->
         <div class="lc-testimonials__grid">
-            <div class="lc-testimonials__card"><div class="lc-testimonials__quote-icon"><i class="fa fa-quote-left"></i></div><p class="lc-testimonials__text">Suri's Legal gave us the clarity we needed when setting up our startup. Their advice on incorporation and contracts saved us from costly mistakes early on.</p><div class="lc-testimonials__author"><img src="img/testimonial-1.webp" alt="Client" class="lc-testimonials__avatar"><div><div class="lc-testimonials__author-name">Arjun Mehta</div><div class="lc-testimonials__author-role">Entrepreneur</div></div></div></div>
-            <div class="lc-testimonials__card"><div class="lc-testimonials__quote-icon"><i class="fa fa-quote-left"></i></div><p class="lc-testimonials__text">The team handled our corporate restructuring with absolute professionalism. Everything was transparent, timely, and stress-free from start to finish.</p><div class="lc-testimonials__author"><img src="img/testimonial-2.webp" alt="Client" class="lc-testimonials__avatar"><div><div class="lc-testimonials__author-name">Priya Subramaniam</div><div class="lc-testimonials__author-role">Corporate Executive</div></div></div></div>
-            <div class="lc-testimonials__card"><div class="lc-testimonials__quote-icon"><i class="fa fa-quote-left"></i></div><p class="lc-testimonials__text">I had a complex property dispute that other firms hesitated to take. Suri's Legal stepped in with a clear strategy and resolved it efficiently.</p><div class="lc-testimonials__author"><img src="img/testimonial-3.webp" alt="Client" class="lc-testimonials__avatar"><div><div class="lc-testimonials__author-name">Rajan Pillai</div><div class="lc-testimonials__author-role">Real Estate Developer</div></div></div></div>
+          <div class="lc-testimonials__card">
+            <div class="lc-testimonials__quote-icon">
+              <i class="fa fa-quote-left"></i>
+            </div>
+            <p class="lc-testimonials__text">
+              Suri's Legal gave us the clarity we needed when setting up our
+              startup. Their advice on incorporation and contracts saved us from
+              costly mistakes early on.
+            </p>
+            <div class="lc-testimonials__author">
+              <div>
+                <div class="lc-testimonials__author-name">Arjun Mehta</div>
+                <div class="lc-testimonials__author-role">Entrepreneur</div>
+              </div>
+            </div>
+          </div>
+          <div class="lc-testimonials__card">
+            <div class="lc-testimonials__quote-icon">
+              <i class="fa fa-quote-left"></i>
+            </div>
+            <p class="lc-testimonials__text">
+              The team handled our corporate restructuring with absolute
+              professionalism. Everything was transparent, timely, and
+              stress-free from start to finish.
+            </p>
+            <div class="lc-testimonials__author">
+              <div>
+                <div class="lc-testimonials__author-name">
+                  Priya Subramaniam
+                </div>
+                <div class="lc-testimonials__author-role">
+                  Corporate Executive
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="lc-testimonials__card">
+            <div class="lc-testimonials__quote-icon">
+              <i class="fa fa-quote-left"></i>
+            </div>
+            <p class="lc-testimonials__text">
+              I had a complex property dispute that other firms hesitated to
+              take. Suri's Legal stepped in with a clear strategy and resolved
+              it efficiently.
+            </p>
+            <div class="lc-testimonials__author">
+              <div>
+                <div class="lc-testimonials__author-name">Rajan Pillai</div>
+                <div class="lc-testimonials__author-role">
+                  Real Estate Developer
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
         <!-- Mobile carousel -->
         <div class="mob-carousel testimonials-carousel" id="testCarousel">
-            <div class="mob-carousel__track-wrap"><div class="mob-carousel__track" id="testTrack">
-                <div class="mob-carousel__slide"><div class="lc-testimonials__card"><div class="lc-testimonials__quote-icon"><i class="fa fa-quote-left"></i></div><p class="lc-testimonials__text">Suri's Legal gave us the clarity we needed when setting up our startup. Their advice on incorporation and contracts saved us from costly mistakes early on.</p><div class="lc-testimonials__author"><img src="img/testimonial-1.webp" alt="Client" class="lc-testimonials__avatar"><div><div class="lc-testimonials__author-name">Arjun Mehta</div><div class="lc-testimonials__author-role">Entrepreneur</div></div></div></div></div>
-                <div class="mob-carousel__slide"><div class="lc-testimonials__card"><div class="lc-testimonials__quote-icon"><i class="fa fa-quote-left"></i></div><p class="lc-testimonials__text">The team handled our corporate restructuring with absolute professionalism. Everything was transparent, timely, and stress-free from start to finish.</p><div class="lc-testimonials__author"><img src="img/testimonial-2.webp" alt="Client" class="lc-testimonials__avatar"><div><div class="lc-testimonials__author-name">Priya Subramaniam</div><div class="lc-testimonials__author-role">Corporate Executive</div></div></div></div></div>
-                <div class="mob-carousel__slide"><div class="lc-testimonials__card"><div class="lc-testimonials__quote-icon"><i class="fa fa-quote-left"></i></div><p class="lc-testimonials__text">I had a complex property dispute that other firms hesitated to take. Suri's Legal stepped in with a clear strategy and resolved it efficiently.</p><div class="lc-testimonials__author"><img src="img/testimonial-3.webp" alt="Client" class="lc-testimonials__avatar"><div><div class="lc-testimonials__author-name">Rajan Pillai</div><div class="lc-testimonials__author-role">Real Estate Developer</div></div></div></div></div>
-            </div></div>
-            <div class="mob-carousel__dots" id="testDots"></div>
-            <div class="mob-carousel__nav">
-                <button class="mob-carousel__btn" data-cid="test" data-dir="prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="mob-carousel__btn" data-cid="test" data-dir="next"><i class="fas fa-chevron-right"></i></button>
+          <div class="mob-carousel__track-wrap">
+            <div class="mob-carousel__track" id="testTrack">
+              <div class="mob-carousel__slide">
+                <div class="lc-testimonials__card">
+                  <div class="lc-testimonials__quote-icon">
+                    <i class="fa fa-quote-left"></i>
+                  </div>
+                  <p class="lc-testimonials__text">
+                    Suri's Legal gave us the clarity we needed when setting up
+                    our startup. Their advice on incorporation and contracts
+                    saved us from costly mistakes early on.
+                  </p>
+                  <div class="lc-testimonials__author">
+                    <div>
+                      <div class="lc-testimonials__author-name">
+                        Arjun Mehta
+                      </div>
+                      <div class="lc-testimonials__author-role">
+                        Entrepreneur
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mob-carousel__slide">
+                <div class="lc-testimonials__card">
+                  <div class="lc-testimonials__quote-icon">
+                    <i class="fa fa-quote-left"></i>
+                  </div>
+                  <p class="lc-testimonials__text">
+                    The team handled our corporate restructuring with absolute
+                    professionalism. Everything was transparent, timely, and
+                    stress-free from start to finish.
+                  </p>
+                  <div class="lc-testimonials__author">
+                    <div>
+                      <div class="lc-testimonials__author-name">
+                        Priya Subramaniam
+                      </div>
+                      <div class="lc-testimonials__author-role">
+                        Corporate Executive
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mob-carousel__slide">
+                <div class="lc-testimonials__card">
+                  <div class="lc-testimonials__quote-icon">
+                    <i class="fa fa-quote-left"></i>
+                  </div>
+                  <p class="lc-testimonials__text">
+                    I had a complex property dispute that other firms hesitated
+                    to take. Suri's Legal stepped in with a clear strategy and
+                    resolved it efficiently.
+                  </p>
+                  <div class="lc-testimonials__author">
+                    <div>
+                      <div class="lc-testimonials__author-name">
+                        Rajan Pillai
+                      </div>
+                      <div class="lc-testimonials__author-role">
+                        Real Estate Developer
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="mob-carousel__dots" id="testDots"></div>
+          <div class="mob-carousel__nav">
+            <button class="mob-carousel__btn" data-cid="test" data-dir="prev">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="mob-carousel__btn" data-cid="test" data-dir="next">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
         </div>
-    </div>
-</section>
+      </div>
+    </section>
 
-<!-- BLOG -->
-<section class="lc-blog lc-section" id="blog">
-    <div class="lc-container">
+    <!-- BLOG -->
+    <section class="lc-blog lc-section" id="blog">
+      <div class="lc-container">
         <div class="lc-section-head">
-            <span class="lc-label">Insights &amp; Updates</span>
-            <h2 class="lc-section-head__title">Latest From Our Blog</h2>
-            <span class="lc-divider"></span>
+          <span class="lc-label">Insights &amp; Updates</span>
+          <h2 class="lc-section-head__title">Latest From Our Blog</h2>
+          <span class="lc-divider"></span>
         </div>
         <!-- Desktop -->
         <div class="lc-blog__grid">
-            <div class="lc-blog__card"><div class="lc-blog__image-wrap"><img src="img/blog-1.webp" alt="Blog"><span class="lc-blog__category">Civil Law</span></div><div class="lc-blog__body"><div class="lc-blog__meta"><span class="lc-blog__meta-item"><i class="fa fa-calendar-alt"></i> 01 Jan 2025</span></div><h3 class="lc-blog__title">Understanding Property Disputes: What Every Homeowner Should Know</h3><p class="lc-blog__excerpt">Property disputes can be complex and emotionally draining. Know what to do before they escalate into litigation.</p><a href="#" class="lc-blog__readmore">Read More <i class="fas fa-arrow-right"></i></a></div></div>
-            <div class="lc-blog__card"><div class="lc-blog__image-wrap"><img src="img/blog-2.webp" alt="Blog"><span class="lc-blog__category">Business Law</span></div><div class="lc-blog__body"><div class="lc-blog__meta"><span class="lc-blog__meta-item"><i class="fa fa-calendar-alt"></i> 15 Feb 2025</span></div><h3 class="lc-blog__title">Why Every Startup Needs a Legal Advisor Before Launching</h3><p class="lc-blog__excerpt">Skipping legal groundwork at launch is one of the most expensive mistakes a startup can make.</p><a href="#" class="lc-blog__readmore">Read More <i class="fas fa-arrow-right"></i></a></div></div>
-            <div class="lc-blog__card"><div class="lc-blog__image-wrap"><img src="img/blog-3.webp" alt="Blog"><span class="lc-blog__category">Compliance</span></div><div class="lc-blog__body"><div class="lc-blog__meta"><span class="lc-blog__meta-item"><i class="fa fa-calendar-alt"></i> 05 Mar 2025</span></div><h3 class="lc-blog__title">Corporate Compliance in 2025: Key Changes Businesses Must Know</h3><p class="lc-blog__excerpt">New regulatory updates are reshaping compliance obligations for Indian businesses. Are you prepared?</p><a href="#" class="lc-blog__readmore">Read More <i class="fas fa-arrow-right"></i></a></div></div>
+          <div class="lc-blog__card">
+            <div class="lc-blog__image-wrap">
+              <img src="img/blog-1.webp" alt="Blog" /><span
+                class="lc-blog__category"
+                >Civil Law</span
+              >
+            </div>
+            <div class="lc-blog__body">
+              <div class="lc-blog__meta">
+                <span class="lc-blog__meta-item"
+                  ><i class="fa fa-calendar-alt"></i> 01 Jan 2025</span
+                >
+              </div>
+              <h3 class="lc-blog__title">
+                Understanding Property Disputes: What Every Homeowner Should
+                Know
+              </h3>
+              <p class="lc-blog__excerpt">
+                Property disputes can be complex and emotionally draining. Know
+                what to do before they escalate into litigation.
+              </p>
+              <a href="#" class="lc-blog__readmore"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="lc-blog__card">
+            <div class="lc-blog__image-wrap">
+              <img src="img/blog-2.webp" alt="Blog" /><span
+                class="lc-blog__category"
+                >Business Law</span
+              >
+            </div>
+            <div class="lc-blog__body">
+              <div class="lc-blog__meta">
+                <span class="lc-blog__meta-item"
+                  ><i class="fa fa-calendar-alt"></i> 15 Feb 2025</span
+                >
+              </div>
+              <h3 class="lc-blog__title">
+                Why Every Startup Needs a Legal Advisor Before Launching
+              </h3>
+              <p class="lc-blog__excerpt">
+                Skipping legal groundwork at launch is one of the most expensive
+                mistakes a startup can make.
+              </p>
+              <a href="#" class="lc-blog__readmore"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
+          <div class="lc-blog__card">
+            <div class="lc-blog__image-wrap">
+              <img src="img/blog-3.webp" alt="Blog" /><span
+                class="lc-blog__category"
+                >Compliance</span
+              >
+            </div>
+            <div class="lc-blog__body">
+              <div class="lc-blog__meta">
+                <span class="lc-blog__meta-item"
+                  ><i class="fa fa-calendar-alt"></i> 05 Mar 2025</span
+                >
+              </div>
+              <h3 class="lc-blog__title">
+                Corporate Compliance in 2025: Key Changes Businesses Must Know
+              </h3>
+              <p class="lc-blog__excerpt">
+                New regulatory updates are reshaping compliance obligations for
+                Indian businesses. Are you prepared?
+              </p>
+              <a href="#" class="lc-blog__readmore"
+                >Read More <i class="fas fa-arrow-right"></i
+              ></a>
+            </div>
+          </div>
         </div>
         <!-- Mobile carousel -->
         <div class="mob-carousel blog-carousel" id="blogCarousel">
-            <div class="mob-carousel__track-wrap"><div class="mob-carousel__track" id="blogTrack">
-                <div class="mob-carousel__slide"><div class="lc-blog__card"><div class="lc-blog__image-wrap"><img src="img/blog-1.webp" alt="Blog"><span class="lc-blog__category">Civil Law</span></div><div class="lc-blog__body"><div class="lc-blog__meta"><span class="lc-blog__meta-item"><i class="fa fa-calendar-alt"></i> 01 Jan 2025</span></div><h3 class="lc-blog__title">Understanding Property Disputes: What Every Homeowner Should Know</h3><p class="lc-blog__excerpt">Property disputes can be complex and emotionally draining. Know what to do before they escalate.</p><a href="#" class="lc-blog__readmore">Read More <i class="fas fa-arrow-right"></i></a></div></div></div>
-                <div class="mob-carousel__slide"><div class="lc-blog__card"><div class="lc-blog__image-wrap"><img src="img/blog-2.webp" alt="Blog"><span class="lc-blog__category">Business Law</span></div><div class="lc-blog__body"><div class="lc-blog__meta"><span class="lc-blog__meta-item"><i class="fa fa-calendar-alt"></i> 15 Feb 2025</span></div><h3 class="lc-blog__title">Why Every Startup Needs a Legal Advisor Before Launching</h3><p class="lc-blog__excerpt">Skipping legal groundwork at launch is one of the most expensive mistakes a startup can make.</p><a href="#" class="lc-blog__readmore">Read More <i class="fas fa-arrow-right"></i></a></div></div></div>
-                <div class="mob-carousel__slide"><div class="lc-blog__card"><div class="lc-blog__image-wrap"><img src="img/blog-3.webp" alt="Blog"><span class="lc-blog__category">Compliance</span></div><div class="lc-blog__body"><div class="lc-blog__meta"><span class="lc-blog__meta-item"><i class="fa fa-calendar-alt"></i> 05 Mar 2025</span></div><h3 class="lc-blog__title">Corporate Compliance in 2025: Key Changes Businesses Must Know</h3><p class="lc-blog__excerpt">New regulatory updates are reshaping compliance obligations for Indian businesses. Are you prepared?</p><a href="#" class="lc-blog__readmore">Read More <i class="fas fa-arrow-right"></i></a></div></div></div>
-            </div></div>
-            <div class="mob-carousel__dots" id="blogDots"></div>
-            <div class="mob-carousel__nav">
-                <button class="mob-carousel__btn" data-cid="blog" data-dir="prev"><i class="fas fa-chevron-left"></i></button>
-                <button class="mob-carousel__btn" data-cid="blog" data-dir="next"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="lc-footer" id="contact">
-    <div class="lc-container">
-        <div class="lc-footer__grid">
-            <div>
-                <div class="lc-footer__brand-name">Suri's Legal Consulting</div>
-                <div class="lc-footer__brand-tag">Clarity &middot; Compliance &middot; Confidence</div>
-                <p class="lc-footer__about-text">A professional legal advisory firm committed to delivering clear, reliable and strategic legal guidance. We bridge the gap between complex legal frameworks and real-world applications.</p>
-                <div class="lc-footer__socials">
-                    <a href="#" class="lc-footer__social"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#" class="lc-footer__social"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="lc-footer__social"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="lc-footer__social"><i class="fab fa-instagram"></i></a>
+          <div class="mob-carousel__track-wrap">
+            <div class="mob-carousel__track" id="blogTrack">
+              <div class="mob-carousel__slide">
+                <div class="lc-blog__card">
+                  <div class="lc-blog__image-wrap">
+                    <img src="img/blog-1.webp" alt="Blog" /><span
+                      class="lc-blog__category"
+                      >Civil Law</span
+                    >
+                  </div>
+                  <div class="lc-blog__body">
+                    <div class="lc-blog__meta">
+                      <span class="lc-blog__meta-item"
+                        ><i class="fa fa-calendar-alt"></i> 01 Jan 2025</span
+                      >
+                    </div>
+                    <h3 class="lc-blog__title">
+                      Understanding Property Disputes: What Every Homeowner
+                      Should Know
+                    </h3>
+                    <p class="lc-blog__excerpt">
+                      Property disputes can be complex and emotionally draining.
+                      Know what to do before they escalate.
+                    </p>
+                    <a href="#" class="lc-blog__readmore"
+                      >Read More <i class="fas fa-arrow-right"></i
+                    ></a>
+                  </div>
                 </div>
-            </div>
-            <div>
-                <div class="lc-footer__col-title">Quick Links</div>
-                <ul class="lc-footer__links">
-                    <li><a href="#about" class="lc-footer__link">About Us</a></li>
-                    <li><a href="#services" class="lc-footer__link">Our Services</a></li>
-                    <li><a href="#industries" class="lc-footer__link">Industries</a></li>
-                    <li><a href="#faqs" class="lc-footer__link">FAQs</a></li>
-                    <li><a href="#blog" class="lc-footer__link">Blog</a></li>
-                </ul>
-            </div>
-            <div>
-                <div class="lc-footer__col-title">Services</div>
-                <ul class="lc-footer__links">
-                    <li><a href="#" class="lc-footer__link">Legal Advisory</a></li>
-                    <li><a href="#" class="lc-footer__link">Corporate Law</a></li>
-                    <li><a href="#" class="lc-footer__link">Documentation</a></li>
-                    <li><a href="#" class="lc-footer__link">Civil Matters</a></li>
-                    <li><a href="#" class="lc-footer__link">Compliance</a></li>
-                    <li><a href="#" class="lc-footer__link">IP &amp; Trademarks</a></li>
-                </ul>
-            </div>
-            <div>
-                <div class="lc-footer__col-title">Contact Us</div>
-                <div class="lc-footer__contact-list">
-                    <div class="lc-footer__contact-row"><i class="fas fa-map-marker-alt"></i><span>123 Legal Avenue, Madurai, Tamil Nadu, India</span></div>
-                    <div class="lc-footer__contact-row"><i class="fas fa-phone-alt"></i><span>+91 98765 43210</span></div>
-                    <div class="lc-footer__contact-row"><i class="fas fa-envelope"></i><span>info@surilegal.com</span></div>
-                    <div class="lc-footer__contact-row"><i class="fas fa-clock"></i><span>Mon &ndash; Sat: 9:00 AM &ndash; 6:00 PM</span></div>
+              </div>
+              <div class="mob-carousel__slide">
+                <div class="lc-blog__card">
+                  <div class="lc-blog__image-wrap">
+                    <img src="img/blog-2.webp" alt="Blog" /><span
+                      class="lc-blog__category"
+                      >Business Law</span
+                    >
+                  </div>
+                  <div class="lc-blog__body">
+                    <div class="lc-blog__meta">
+                      <span class="lc-blog__meta-item"
+                        ><i class="fa fa-calendar-alt"></i> 15 Feb 2025</span
+                      >
+                    </div>
+                    <h3 class="lc-blog__title">
+                      Why Every Startup Needs a Legal Advisor Before Launching
+                    </h3>
+                    <p class="lc-blog__excerpt">
+                      Skipping legal groundwork at launch is one of the most
+                      expensive mistakes a startup can make.
+                    </p>
+                    <a href="#" class="lc-blog__readmore"
+                      >Read More <i class="fas fa-arrow-right"></i
+                    ></a>
+                  </div>
                 </div>
+              </div>
+              <div class="mob-carousel__slide">
+                <div class="lc-blog__card">
+                  <div class="lc-blog__image-wrap">
+                    <img src="img/blog-3.webp" alt="Blog" /><span
+                      class="lc-blog__category"
+                      >Compliance</span
+                    >
+                  </div>
+                  <div class="lc-blog__body">
+                    <div class="lc-blog__meta">
+                      <span class="lc-blog__meta-item"
+                        ><i class="fa fa-calendar-alt"></i> 05 Mar 2025</span
+                      >
+                    </div>
+                    <h3 class="lc-blog__title">
+                      Corporate Compliance in 2025: Key Changes Businesses Must
+                      Know
+                    </h3>
+                    <p class="lc-blog__excerpt">
+                      New regulatory updates are reshaping compliance
+                      obligations for Indian businesses. Are you prepared?
+                    </p>
+                    <a href="#" class="lc-blog__readmore"
+                      >Read More <i class="fas fa-arrow-right"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+          <div class="mob-carousel__dots" id="blogDots"></div>
+          <div class="mob-carousel__nav">
+            <button class="mob-carousel__btn" data-cid="blog" data-dir="prev">
+              <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="mob-carousel__btn" data-cid="blog" data-dir="next">
+              <i class="fas fa-chevron-right"></i>
+            </button>
+          </div>
         </div>
-        <div class="lc-footer__bottom">
-            <span>&copy; 2025 Suri's Legal Consulting. All Rights Reserved.</span>
-            <div class="lc-footer__bottom-links">
-                <a href="#" class="lc-footer__bottom-link">Privacy Policy</a>
-                <a href="#" class="lc-footer__bottom-link">Terms of Service</a>
-                <a href="#" class="lc-footer__bottom-link">Disclaimer</a>
-            </div>
-        </div>
-    </div>
-</footer>
+      </div>
+    </section>
 
-<a href="#" class="lc-back-top" id="backTop"><i class="fas fa-chevron-up"></i></a>
+    <div id="footer"></div>
 
-<script src="js/main.js"></script>
-</body>
+    <a href="#" class="lc-back-top" id="backTop"
+      ><i class="fas fa-chevron-up"></i
+    ></a>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
