@@ -1499,10 +1499,11 @@ details[open] .lc-faqs__q-arrow {
 }
 
 .lc-blog__excerpt {
-  font-size: 13px;
-  line-height: 1.7;
-  color: var(--clr-muted);
-  margin-bottom: 16px
+  display: -webkit-box;
+  -webkit-line-clamp: 2;       /* limits to 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .lc-blog__readmore {
