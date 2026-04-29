@@ -1494,16 +1494,35 @@ details[open] .lc-faqs__q-arrow {
   transition: var(--transition)
 }
 
+.lc-blog__title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  /* limit to 2 lines */
+  -webkit-box-orient: vertical;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  line-height: 1.4;
+  max-height: calc(1.4em * 2);
+  /* exactly 2 lines */
+}
+
 .lc-blog__card:hover .lc-blog__title {
   color: var(--clr-gold)
 }
 
 .lc-blog__excerpt {
   display: -webkit-box;
-  -webkit-line-clamp: 2;       /* limits to 2 lines */
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+
   overflow: hidden;
   text-overflow: ellipsis;
+
+  line-height: 1.6;
+  max-height: calc(1.6em * 2);
+  /* ensures exactly 2 lines */
 }
 
 .lc-blog__readmore {
@@ -1521,6 +1540,20 @@ details[open] .lc-faqs__q-arrow {
 .lc-blog__readmore:hover {
   gap: 13px
 }
+
+.blog-banner__image {
+  margin: 20px 0 10px;
+}
+
+.blog-banner__image img {
+  width: 100%;
+  max-width: 650px;
+  /* control size */
+  border-radius: 4px;
+  display: block;
+}
+
+
 
 /* FOOTER */
 .lc-footer {
@@ -2657,7 +2690,7 @@ details[open] .lc-faqs__q-arrow {
     font-size: 15px;
     font-weight: 600;
     margin-bottom: 10px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding-bottom: 6px;
   }
 
@@ -2698,7 +2731,7 @@ details[open] .lc-faqs__q-arrow {
   .lc-footer__bottom {
     margin-top: 30px;
     padding-top: 16px;
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
 
     display: flex;
     flex-direction: column;
@@ -2722,3 +2755,832 @@ details[open] .lc-faqs__q-arrow {
     text-decoration: none;
   }
 }
+
+.lc-hero__bg {
+  position: absolute;
+  inset: 0;
+  background: url("img/carousel.webp") center/cover no-repeat;
+  opacity: 0.22;
+}
+
+
+.lc-blog-carousel {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.lc-blog-carousel__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+.lc-blog-carousel__track {
+  display: flex;
+  gap: 24px;
+  transition: transform 0.4s ease;
+}
+
+/* Show 3 cards on desktop */
+.lc-blog-carousel .lc-blog__card {
+  min-width: calc(100% / 3 - 16px);
+}
+
+.lc-blog-carousel__btn {
+  background: #111;
+  color: #fff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  z-index: 2;
+}
+
+.lc-blog-carousel__btn.prev {
+  left: -60px;
+}
+
+.lc-blog-carousel__btn.next {
+  right: -60px;
+}
+
+@media (max-width: 1024px) {
+  .lc-blog-carousel .lc-blog__card {
+    min-width: calc(100% / 2 - 16px);
+  }
+}
+
+@media (max-width: 768px) {
+  .lc-blog-carousel {
+    display: none;
+  }
+
+  /* hide desktop carousel */
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ── EVERY CLIENT MATTERS SECTION ───────────────────── */
+.lc-ecm {
+  background: var(--clr-ink);
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+/* Subtle background pattern matching industries section */
+.lc-ecm::before {
+  content: "LEGAL";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--ff-serif);
+  font-size: 200px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: -8px;
+}
+
+/* Gold top accent bar */
+.lc-ecm::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+      var(--clr-gold),
+      var(--clr-gold-lt),
+      var(--clr-gold));
+}
+
+.lc-ecm__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── LEFT CONTENT SIDE ── */
+.lc-ecm__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.lc-ecm__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.lc-ecm__eyebrow-line {
+  width: 36px;
+  height: 1px;
+  background: var(--clr-gold);
+  flex-shrink: 0;
+}
+
+.lc-ecm__title {
+  font-family: var(--ff-serif);
+  font-size: clamp(28px, 4vw, 50px);
+  font-weight: 900;
+  color: var(--clr-white);
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.lc-ecm__title em {
+  font-style: italic;
+  color: var(--clr-gold);
+}
+
+.lc-ecm__desc {
+  font-family: var(--ff-elegant);
+  font-size: clamp(14px, 1.8vw, 18px);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.55);
+  margin-bottom: 36px;
+  max-width: 520px;
+}
+
+.lc-ecm__desc strong {
+  color: var(--clr-white);
+  font-weight: 600;
+}
+
+/* Checklist items */
+.lc-ecm__checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+
+.lc-ecm__check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(184, 150, 90, 0.12);
+  border-left: 3px solid var(--clr-gold);
+  transition: var(--transition);
+}
+
+.lc-ecm__check-item:hover {
+  background: rgba(184, 150, 90, 0.07);
+  border-color: rgba(184, 150, 90, 0.35);
+  border-left-color: var(--clr-gold);
+  transform: translateX(4px);
+}
+
+.lc-ecm__check-icon {
+  width: 22px;
+  height: 22px;
+  background: var(--clr-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 9px;
+  color: var(--clr-white);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.lc-ecm__check-text {
+  font-family: var(--ff-sans);
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+.lc-ecm__check-text strong {
+  color: var(--clr-white);
+  font-weight: 600;
+}
+
+/* CTA Button */
+.lc-ecm__cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ── RIGHT SIDE — FEE CARD ── */
+.lc-ecm__card-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Main fee card */
+.lc-ecm__fee-card {
+  position: relative;
+  background: var(--clr-white);
+  padding: 44px 40px;
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Gold accent corner */
+.lc-ecm__fee-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--clr-gold), var(--clr-gold-lt));
+}
+
+.lc-ecm__fee-eyebrow {
+  font-family: var(--ff-sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  margin-bottom: 14px;
+  display: block;
+}
+
+.lc-ecm__fee-title {
+  font-family: var(--ff-serif);
+  font-size: clamp(22px, 3vw, 32px);
+  font-weight: 900;
+  color: var(--clr-slate);
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.lc-ecm__fee-prices {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.lc-ecm__fee-old {
+  font-family: var(--ff-serif);
+  font-size: 28px;
+  color: #aaa;
+  text-decoration: line-through;
+  font-weight: 400;
+}
+
+.lc-ecm__fee-arrow {
+  font-size: 18px;
+  color: var(--clr-gold);
+}
+
+.lc-ecm__fee-new {
+  font-family: var(--ff-serif);
+  font-size: clamp(36px, 5vw, 52px);
+  font-weight: 900;
+  color: var(--clr-slate);
+  line-height: 1;
+}
+
+.lc-ecm__fee-new sup {
+  font-size: 22px;
+  vertical-align: super;
+  font-weight: 600;
+}
+
+.lc-ecm__fee-divider {
+  display: block;
+  width: 50px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--clr-gold), var(--clr-gold-lt));
+  margin: 0 auto 18px;
+}
+
+.lc-ecm__fee-note {
+  font-size: 12.5px;
+  color: var(--clr-muted);
+  line-height: 1.6;
+}
+
+/* Call CTA strip */
+.lc-ecm__call-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  background: var(--clr-gold);
+  padding: 20px 30px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.lc-ecm__call-strip::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--clr-gold-dk);
+  transform: translateX(-101%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.lc-ecm__call-strip:hover::before {
+  transform: translateX(0);
+}
+
+.lc-ecm__call-icon {
+  font-size: 20px;
+  color: var(--clr-white);
+  position: relative;
+  z-index: 1;
+  animation: ringPulse 2.5s ease infinite;
+}
+
+@keyframes ringPulse {
+
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  10% {
+    transform: rotate(-15deg);
+  }
+
+  20% {
+    transform: rotate(15deg);
+  }
+
+  30% {
+    transform: rotate(0deg);
+  }
+}
+
+.lc-ecm__call-text {
+  font-family: var(--ff-sans);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--clr-white);
+  position: relative;
+  z-index: 1;
+}
+
+/* Stat mini-strip */
+.lc-ecm__stat-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(184, 150, 90, 0.15);
+  margin-top: 4px;
+}
+
+.lc-ecm__stat-box {
+  background: rgba(184, 150, 90, 0.06);
+  padding: 18px 14px;
+  text-align: center;
+  border: 1px solid rgba(184, 150, 90, 0.12);
+}
+
+.lc-ecm__stat-num {
+  font-family: var(--ff-serif);
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--clr-gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.lc-ecm__stat-label {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.35);
+  line-height: 1.4;
+}
+
+/* ── TABLET ── */
+@media (max-width: 1024px) {
+  .lc-ecm__grid {
+    gap: 40px;
+  }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .lc-ecm {
+    padding: 52px 0;
+  }
+
+  .lc-ecm::before {
+    font-size: 80px;
+    letter-spacing: -4px;
+  }
+
+  /* Stack columns */
+  .lc-ecm__grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  /* Title */
+  .lc-ecm__title {
+    font-size: clamp(26px, 7vw, 36px);
+    margin-bottom: 14px;
+  }
+
+  /* Description */
+  .lc-ecm__desc {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+
+  /* Checklist */
+  .lc-ecm__checklist {
+    gap: 10px;
+    margin-bottom: 28px;
+  }
+
+  .lc-ecm__check-item {
+    padding: 11px 13px;
+    gap: 11px;
+  }
+
+  .lc-ecm__check-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 8px;
+  }
+
+  .lc-ecm__check-text {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  /* CTA buttons — full width on mobile */
+  .lc-ecm__cta {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .lc-ecm__cta .lc-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 20px;
+    font-size: 11px;
+  }
+
+  /* Fee card */
+  .lc-ecm__fee-card {
+    padding: 28px 20px;
+  }
+
+  .lc-ecm__fee-title {
+    font-size: clamp(18px, 5vw, 24px);
+    margin-bottom: 18px;
+  }
+
+  .lc-ecm__fee-prices {
+    gap: 12px;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .lc-ecm__fee-old {
+    font-size: 20px;
+  }
+
+  .lc-ecm__fee-new {
+    font-size: 40px;
+  }
+
+  .lc-ecm__fee-new sup {
+    font-size: 18px;
+  }
+
+  .lc-ecm__fee-note {
+    font-size: 12px;
+  }
+
+  /* Call strip */
+  .lc-ecm__call-strip {
+    padding: 16px 20px;
+    gap: 10px;
+  }
+
+  .lc-ecm__call-icon {
+    font-size: 17px;
+  }
+
+  .lc-ecm__call-text {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
+
+  /* Stats row */
+  .lc-ecm__stat-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .lc-ecm__stat-box {
+    padding: 14px 8px;
+  }
+
+  .lc-ecm__stat-num {
+    font-size: 18px;
+  }
+
+  .lc-ecm__stat-label {
+    font-size: 7.5px;
+    letter-spacing: 1px;
+  }
+}
+
+/* ── SMALL PHONES (≤ 390px) ── */
+@media (max-width: 390px) {
+  .lc-ecm {
+    padding: 44px 0;
+  }
+
+  .lc-ecm__title {
+    font-size: clamp(22px, 7vw, 30px);
+  }
+
+  .lc-ecm__fee-prices {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .lc-ecm__fee-arrow {
+    transform: rotate(90deg);
+    display: block;
+  }
+
+  .lc-ecm__fee-old {
+    font-size: 18px;
+  }
+
+  .lc-ecm__fee-new {
+    font-size: 36px;
+  }
+
+  .lc-ecm__stat-num {
+    font-size: 15px;
+  }
+
+  .lc-ecm__stat-label {
+    font-size: 6.5px;
+    letter-spacing: 0.5px;
+  }
+
+  .lc-ecm__call-text {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* ===================================================== */
+/* LOCATIONS / OFFICES SECTION — Dark (Industries style) */
+/* Paste at the bottom of your style.css                 */
+/* ===================================================== */
+
+.lc-locations {
+  background: var(--clr-ink);
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+/* Faint watermark — same as Industries "LEGAL" */
+.lc-locations__bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--ff-serif);
+  font-size: 220px;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.02);
+  white-space: nowrap;
+  pointer-events: none;
+  letter-spacing: -10px;
+  z-index: 0;
+}
+
+.lc-locations .lc-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Section head — white title like Industries */
+.lc-locations .lc-section-head__title {
+  color: var(--clr-white);
+}
+
+/* ── 3-column grid ── */
+.lc-locations__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px; /* tight gap like the mosaic */
+}
+
+/* ── Each office card — dark card like ind-card ── */
+.lc-locations__card {
+  background: var(--clr-slate-mid);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border: 1px solid rgba(184, 150, 90, 0.08);
+  position: relative;
+}
+
+.lc-locations__card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(184, 150, 90, 0.3);
+}
+
+/* Gold sweep bar on bottom — like ind-card line */
+.lc-locations__card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--clr-gold), var(--clr-gold-lt));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.lc-locations__card:hover::after {
+  transform: scaleX(1);
+}
+
+/* ── Card header area ── */
+.lc-locations__card-head {
+  padding: 26px 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Icon box — like lc-ind-card__icon */
+.lc-locations__icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(184, 150, 90, 0.15);
+  border: 1px solid rgba(184, 150, 90, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  color: var(--clr-gold);
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.lc-locations__card:hover .lc-locations__icon {
+  background: var(--clr-gold);
+  color: var(--clr-white);
+  border-color: var(--clr-gold);
+}
+
+/* Gold line — like lc-ind-card__line */
+.lc-locations__line {
+  width: 0;
+  height: 2px;
+  background: var(--clr-gold);
+  transition: width 0.4s ease;
+}
+
+.lc-locations__card:hover .lc-locations__line {
+  width: 36px;
+}
+
+/* ── Office name ── */
+.lc-locations__card h3 {
+  font-family: var(--ff-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--clr-white);
+  line-height: 1.3;
+  margin: 0;
+}
+
+/* ── Address ── */
+.lc-locations__card p {
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  padding: 0 24px 18px;
+}
+
+/* ── iframe map ── */
+.lc-locations__card iframe {
+  width: 100%;
+  height: 210px;
+  border: none;
+  display: block;
+  border-top: 1px solid rgba(184, 150, 90, 0.15);
+  filter: grayscale(30%) brightness(0.85);
+  transition: filter 0.35s ease;
+}
+
+.lc-locations__card:hover iframe {
+  filter: grayscale(0%) brightness(1);
+}
+
+/* ── TABLET ── */
+@media (max-width: 1024px) {
+  .lc-locations__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+
+  .lc-locations__card iframe {
+    height: 170px;
+  }
+
+  .lc-locations__card h3 {
+    font-size: 16px;
+  }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .lc-locations {
+    padding: 56px 0;
+  }
+
+  .lc-locations__bg-text {
+    font-size: 90px;
+    letter-spacing: -5px;
+  }
+
+  /* Stack vertically */
+  .lc-locations__grid {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .lc-locations__card {
+    transform: none !important;
+  }
+
+  .lc-locations__card-head {
+    padding: 20px 18px 12px;
+  }
+
+  .lc-locations__card h3 {
+    font-size: 17px;
+  }
+
+  .lc-locations__card p {
+    font-size: 12.5px;
+    padding: 0 18px 16px;
+  }
+
+  .lc-locations__card iframe {
+    height: 200px;
+  }
+}
+/* ===================================================== */
