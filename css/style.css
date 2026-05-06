@@ -356,12 +356,6 @@ a {
   overflow: hidden
 }
 
-.lc-hero__bg {
-  position: absolute;
-  inset: 0;
-  background: url('img/about.webp') center/cover no-repeat;
-  opacity: 0.22
-}
 
 .lc-hero__pattern {
   position: absolute;
@@ -2759,8 +2753,15 @@ details[open] .lc-faqs__q-arrow {
 .lc-hero__bg {
   position: absolute;
   inset: 0;
-  background: url("img/carousel.webp") center/cover no-repeat;
+  overflow: hidden;
+}
+
+.lc-hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   opacity: 0.22;
+  display: block;
 }
 
 
