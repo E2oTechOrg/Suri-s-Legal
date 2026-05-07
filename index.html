@@ -117,7 +117,10 @@
     <!-- HERO -->
     <section class="lc-hero">
       <div class="lc-hero__bg">
-        <img src="img/carousel.webp" alt="" />
+        <picture>
+          <source media="(max-width: 768px)" srcset="img/hero1.webp" />
+          <img src="img/hero.webp" alt="" />
+        </picture>
       </div>
       <div class="lc-hero__pattern"></div>
       <div class="lc-container">
@@ -1452,6 +1455,46 @@
             <iframe
               src="https://www.google.com/maps?q=No+18,+Old+Agraharam+Street,+Chinna+Chokkikulam,+Madurai+625002&output=embed"
               loading="lazy"
+            >
+            </iframe>
+          </div>
+
+          <!-- ── Chennai Office ── -->
+          <div class="lc-locations__card">
+            <div class="lc-locations__card-head">
+              <div class="lc-locations__icon">
+                <i class="fas fa-landmark"></i>
+              </div>
+              <div class="lc-locations__line"></div>
+              <h3>
+                Chennai<br /><small
+                  style="
+                    font-size: 13px;
+                    font-weight: 400;
+                    color: var(--clr-gold);
+                    font-family: var(--ff-sans);
+                    letter-spacing: 1px;
+                  "
+                  >Branch Office</small
+                >
+              </h3>
+              <p
+                style="
+                  padding: 0;
+                  font-size: 12.5px;
+                  line-height: 1.7;
+                  color: rgba(255, 255, 255, 0.5);
+                "
+              >
+                No: G 2, Sai Apartments,<br />
+                Mosque Street, Saidapet,<br />
+                Chennai — 600015
+              </p>
+            </div>
+            <iframe
+              src="https://www.google.com/maps?q=G+2,+Sai+Apartments,+Mosque+Street,+Saidapet,+Chennai+600015&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
             >
             </iframe>
           </div>
